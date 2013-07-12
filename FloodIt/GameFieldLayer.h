@@ -15,7 +15,7 @@
 #import "GuiLayer.h"
 
 // HelloWorldLayer
-@interface GameFieldLayer : CCLayerColor <GKAchievementViewControllerDelegate, GKLeaderboardViewControllerDelegate, FloodItemDelegate, ColorPanelDelegate, GuiLayerDelegate>
+@interface GameFieldLayer : CCLayerColor <ColorPanelDelegate, GuiLayerDelegate>
 {
 }
 

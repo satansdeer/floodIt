@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C1879711790AF4D00D3DEFD /* ScoreLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1879701790AF4D00D3DEFD /* ScoreLayer.m */; };
+		6C1879761790B24600D3DEFD /* loose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1879721790B24600D3DEFD /* loose.png */; };
+		6C1879771790B24600D3DEFD /* win@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1879731790B24600D3DEFD /* win@2x.png */; };
+		6C1879781790B24600D3DEFD /* loose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1879741790B24600D3DEFD /* loose@2x.png */; };
+		6C1879791790B24600D3DEFD /* win.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C1879751790B24600D3DEFD /* win.png */; };
 		6C2844E4178D7523002973D0 /* p2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2844E2178D7523002973D0 /* p2.png */; };
 		6C2844E5178D7523002973D0 /* p1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C2844E3178D7523002973D0 /* p1.png */; };
 		6C2844E8178D78F1002973D0 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2844E7178D78F1002973D0 /* GameModel.m */; };
@@ -213,6 +218,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C18796F1790AF4D00D3DEFD /* ScoreLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreLayer.h; sourceTree = "<group>"; };
+		6C1879701790AF4D00D3DEFD /* ScoreLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreLayer.m; sourceTree = "<group>"; };
+		6C1879721790B24600D3DEFD /* loose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loose.png; sourceTree = "<group>"; };
+		6C1879731790B24600D3DEFD /* win@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "win@2x.png"; sourceTree = "<group>"; };
+		6C1879741790B24600D3DEFD /* loose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loose@2x.png"; sourceTree = "<group>"; };
+		6C1879751790B24600D3DEFD /* win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win.png; sourceTree = "<group>"; };
 		6C2844E2178D7523002973D0 /* p2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p2.png; sourceTree = "<group>"; };
 		6C2844E3178D7523002973D0 /* p1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p1.png; sourceTree = "<group>"; };
 		6C2844E6178D78F1002973D0 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
@@ -730,6 +741,10 @@
 		6C6E795F178879D400C6BE7B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6C1879721790B24600D3DEFD /* loose.png */,
+				6C1879731790B24600D3DEFD /* win@2x.png */,
+				6C1879741790B24600D3DEFD /* loose@2x.png */,
+				6C1879751790B24600D3DEFD /* win.png */,
 				6CEE13D7178E10DC00B9BD49 /* colors */,
 				6C7D65A7178E106700D24103 /* Dirt Block@2x.png */,
 				6C291EE8178DE5EF00E4E31A /* Resources */,
@@ -1101,8 +1116,10 @@
 		6CA7FF36178B573000BF9477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6C291EE0178DE42200E4E31A /* MainMenuLayer.m */,
 				6C291EE1178DE42200E4E31A /* MainMenuLayer.h */,
+				6C291EE0178DE42200E4E31A /* MainMenuLayer.m */,
+				6C18796F1790AF4D00D3DEFD /* ScoreLayer.h */,
+				6C1879701790AF4D00D3DEFD /* ScoreLayer.m */,
 				6C291EE2178DE42200E4E31A /* IntroLayer.h */,
 				6C291EE3178DE42200E4E31A /* IntroLayer.m */,
 				6C2844E9178D8708002973D0 /* GUI */,
@@ -1280,6 +1297,10 @@
 				6C291F64178DE5EF00E4E31A /* Start@2x.png in Resources */,
 				6C291F4E178DE5EF00E4E31A /* Volume-Up.png in Resources */,
 				6C291F4B178DE5EF00E4E31A /* Right-Play.png in Resources */,
+				6C1879761790B24600D3DEFD /* loose.png in Resources */,
+				6C1879771790B24600D3DEFD /* win@2x.png in Resources */,
+				6C1879781790B24600D3DEFD /* loose@2x.png in Resources */,
+				6C1879791790B24600D3DEFD /* win.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1399,6 +1420,7 @@
 				6CA7FF35178B571E00BF9477 /* GuiLayer.m in Sources */,
 				6CA7FF39178B6BB600BF9477 /* ColorPanel.m in Sources */,
 				6C2844E8178D78F1002973D0 /* GameModel.m in Sources */,
+				6C1879711790AF4D00D3DEFD /* ScoreLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

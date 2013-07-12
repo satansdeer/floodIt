@@ -16,6 +16,7 @@
 #import "FloodItem.h"
 #import "GuiLayer.h"
 #import "GameModel.h"
+#import "ScoreLayer.h"
 
 #define TILESIZE 50
 
@@ -125,7 +126,6 @@
                                                (tileSize+2)*j+(winSize.height/2 - (TILESIZE*tilesNumber)/2)+38);
                 CCSprite*sprite = [[CCSprite alloc] initWithFile:@"Tree Tall.png"];
                 sprite.scale = tileSize/sprite.boundingBox.size.width;
-                sprite.zOrder = j*tilesNumber +i;
                 sprite.position = position;
                 [self addChild:sprite];
             }
@@ -315,6 +315,44 @@
         [GameModel sharedModel].turns += 7;
         [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
     }
+    [self applyWinSequence];
+}
+
+-(void)applyLooseSequence{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CCSprite*sprite = [[CCSprite alloc] initWithFile:@"loose.png"];
+    [self.guiLayer addChild:sprite];
+    id moveToCenter = [CCMoveTo actionWithDuration:2 position:ccp(winSize.width/2, winSize.height/2)];
+    id moveToLeft = [CCMoveTo actionWithDuration:2 position:ccp(0-sprite.boundingBox.size.width, winSize.height/2)];
+    sprite.position = ccp(winSize.width+sprite.boundingBox.size.width, winSize.height/2);
+    [sprite runAction:[CCSequence actions:
+                       [CCEaseBackInOut actionWithAction:moveToCenter],
+                       [CCDelayTime actionWithDuration:0.5],
+                       [CCEaseBackInOut actionWithAction:moveToLeft],
+                       [CCCallFuncO actionWithTarget:self selector:@selector(openScore) object:nil],
+                       nil]];
+}
+
+-(void)openScore{
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[ScoreLayer scene] withColor:ccWHITE]];
+}
+
+-(void)applyWinSequence{
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    CCSprite*sprite = [[CCSprite alloc] initWithFile:@"win.png"];
+    [self.guiLayer addChild:sprite];
+    id moveToCenter = [CCMoveTo actionWithDuration:1 position:ccp(winSize.width/2, winSize.height/2)];
+    id moveToLeft = [CCMoveTo actionWithDuration:1 position:ccp(0-sprite.boundingBox.size.width, winSize.height/2)];
+    sprite.position = ccp(winSize.width+sprite.boundingBox.size.width, winSize.height/2);
+    [sprite runAction:[CCSequence actions:
+                       [CCEaseBackInOut actionWithAction:moveToCenter],
+                       [CCDelayTime actionWithDuration:0.5],
+                       [CCEaseBackInOut actionWithAction:moveToLeft],
+                       [CCCallFuncO actionWithTarget:self selector:@selector(nextLevel) object:nil],
+                     nil]];
+}
+
+-(void)nextLevel{
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameFieldLayer scene] withColor:ccWHITE]];
 }
 
@@ -323,7 +361,7 @@
     [GameModel sharedModel].turns = 25;
     [GameModel sharedModel].score = 0;
     [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
-     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] withColor:ccWHITE]];
+    [self applyLooseSequence];
 }
 
 #pragma mark - FloodItemDelegate
