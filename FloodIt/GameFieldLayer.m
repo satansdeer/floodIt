@@ -144,19 +144,20 @@
     }
     int checkedItems = self.totalItems;
     int totalItems = self.totalItems;
-    int iteration=0;
+    int iteration = 0;
     while(checkedItems >= totalItems){
-        NSLog(@"%d %d", checkedItems, totalItems);
+        NSLog(@"%d %d %d", checkedItems, totalItems,totalItems);
         for(int i = 0; i<self.floodItems.count; i++){
             self.floodItems[i] = [[NSMutableArray alloc] init];
             for(int j = 0; j<self.floodItems.count; j++){
                 self.floodItems[i][j] = testField[i][j];
             }
         }
+        self.totalItems = totalItems;
+        iteration++;
         if(iteration>numOfItemsToDelete){
             return;
         }
-        iteration++;
         self.totalItems = totalItems;
         checkedItems = 0;
         NSMutableArray * checkedItemsArray = [[NSMutableArray alloc] init];
@@ -165,8 +166,6 @@
                    IsValid:startItem
               checkedItems:&checkedItems
          checkedItemsArray:checkedItemsArray];
-        NSLog(@"%d %d", checkedItems, totalItems);
-        NSLog(@"--");
     }
 }
 
@@ -177,8 +176,10 @@
            (point.y!=0 && point.x < self.floodItems.count-1)){
             *totalItems -= 1;
             field[(int)point.x][(int)point.y] = @"empty";
+            return;
         }
     }
+    [self removeRandomItemFromField:field totalItems:totalItems];
 }
 
 -(void)checkIfField:(NSArray*)field IsValid:(FloodItem*)item checkedItems:(int*)checkedItems checkedItemsArray:(NSMutableArray*)checkedItemsArray{
