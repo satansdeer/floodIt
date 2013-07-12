@@ -24,7 +24,6 @@
 		6C291F31178DE5EF00E4E31A /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF1178DE5EF00E4E31A /* Icon-Small@2x.png */; };
 		6C291F32178DE5EF00E4E31A /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF2178DE5EF00E4E31A /* Icon.png */; };
 		6C291F33178DE5EF00E4E31A /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF3178DE5EF00E4E31A /* Icon@2x.png */; };
-		6C291F34178DE5EF00E4E31A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF4178DE5EF00E4E31A /* Info.plist */; };
 		6C291F35178DE5EF00E4E31A /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF5178DE5EF00E4E31A /* iTunesArtwork */; };
 		6C291F36178DE5EF00E4E31A /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF7178DE5EF00E4E31A /* 0.png */; };
 		6C291F37178DE5EF00E4E31A /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C291EF8178DE5EF00E4E31A /* 1.png */; };
@@ -234,7 +233,6 @@
 		6C291EF1178DE5EF00E4E31A /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		6C291EF2178DE5EF00E4E31A /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		6C291EF3178DE5EF00E4E31A /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		6C291EF4178DE5EF00E4E31A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C291EF5178DE5EF00E4E31A /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		6C291EF7178DE5EF00E4E31A /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
 		6C291EF8178DE5EF00E4E31A /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -604,7 +602,6 @@
 				6C291EF1178DE5EF00E4E31A /* Icon-Small@2x.png */,
 				6C291EF2178DE5EF00E4E31A /* Icon.png */,
 				6C291EF3178DE5EF00E4E31A /* Icon@2x.png */,
-				6C291EF4178DE5EF00E4E31A /* Info.plist */,
 				6C291EF5178DE5EF00E4E31A /* iTunesArtwork */,
 			);
 			path = Resources;
@@ -1226,7 +1223,6 @@
 				6C291F2E178DE5EF00E4E31A /* Icon-72.png in Resources */,
 				6C291F51178DE5EF00E4E31A /* Blank@2x.png in Resources */,
 				6C6E7971178879D400C6BE7B /* Icon-Small@2x.png in Resources */,
-				6C291F34178DE5EF00E4E31A /* Info.plist in Resources */,
 				6C291F69178E0E8200E4E31A /* Tree Tall.png in Resources */,
 				6C291F30178DE5EF00E4E31A /* Icon-Small.png in Resources */,
 				6C291F36178DE5EF00E4E31A /* 0.png in Resources */,
@@ -1460,6 +1456,7 @@
 				GCC_PREFIX_HEADER = FloodIt/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"FloodIt/libs/kazmath/include\"";
 				INFOPLIST_FILE = FloodIt/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",
@@ -1479,6 +1476,7 @@
 				GCC_PREFIX_HEADER = FloodIt/Prefix.pch;
 				HEADER_SEARCH_PATHS = "\"FloodIt/libs/kazmath/include\"";
 				INFOPLIST_FILE = FloodIt/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-ObjC",

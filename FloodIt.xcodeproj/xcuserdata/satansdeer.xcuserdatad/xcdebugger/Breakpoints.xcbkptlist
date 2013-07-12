@@ -60,12 +60,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163659.192241"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "241"
-         endingLineNumber = "241"
-         landmarkName = "-addSameItemsToWinGroup:"
+         startingLineNumber = "249"
+         endingLineNumber = "249"
+         landmarkName = "-checkIfNearStartGroup:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -73,12 +73,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163659.192241"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "242"
-         endingLineNumber = "242"
-         landmarkName = "-addSameItemsToWinGroup:"
+         startingLineNumber = "250"
+         endingLineNumber = "250"
+         landmarkName = "-checkIfNearStartGroup:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -86,12 +86,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163659.192241"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "164"
-         endingLineNumber = "164"
-         landmarkName = "-checkIfField:IsValid:checkedItems:checkedItemsArray:"
+         startingLineNumber = "172"
+         endingLineNumber = "172"
+         landmarkName = "@implementation GameFieldLayer"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "FloodIt/GameFieldLayer.m"
+         timestampString = "395353165.484261"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "174"
+         endingLineNumber = "174"
+         landmarkName = "-removeRandomItemFromField:totalItems:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -99,51 +112,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163659.192241"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "166"
-         endingLineNumber = "166"
-         landmarkName = "-checkIfField:IsValid:checkedItems:checkedItemsArray:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163653.191608"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "145"
-         endingLineNumber = "145"
-         landmarkName = "-makeEmptySpaces"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163031.449279"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "132"
-         endingLineNumber = "132"
-         landmarkName = "-makeEmptySpaces"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163653.191608"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "150"
          endingLineNumber = "150"
-         landmarkName = "-makeEmptySpaces"
+         landmarkName = "-makeEmptySpaces:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -151,12 +125,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163659.192241"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "151"
-         endingLineNumber = "151"
-         landmarkName = "-makeEmptySpaces"
+         startingLineNumber = "137"
+         endingLineNumber = "137"
+         landmarkName = "-makeEmptySpaces:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -164,12 +138,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163653.191608"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "144"
-         endingLineNumber = "144"
-         landmarkName = "-makeEmptySpaces"
+         startingLineNumber = "149"
+         endingLineNumber = "149"
+         landmarkName = "-makeEmptySpaces:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -177,12 +151,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163653.191608"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
-         landmarkName = "-makeEmptySpaces"
+         startingLineNumber = "136"
+         endingLineNumber = "136"
+         landmarkName = "-makeEmptySpaces:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -190,25 +164,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163031.449279"
+         timestampString = "395353165.484261"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "131"
-         endingLineNumber = "131"
-         landmarkName = "-makeEmptySpaces"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "FloodIt/GameFieldLayer.m"
-         timestampString = "395163199.154207"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "135"
-         endingLineNumber = "135"
-         landmarkName = "-makeEmptySpaces"
+         startingLineNumber = "140"
+         endingLineNumber = "140"
+         landmarkName = "-makeEmptySpaces:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

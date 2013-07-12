@@ -51,10 +51,21 @@
     self.availableColors = availableColors;
     [self drawBackground:tilesNum];
     [self placeTiles:tilesNum];
+    [self makeEmptySpaces:2];
+    [self displayItems];
+    [self createStartingItem:tilesNum];
     self.colorPanel = [[ColorPanel alloc] initWithDelegate:self andAvailableColors:self.availableColors];
     [self addChild:self.colorPanel];
     self.guiLayer = [[GuiLayer alloc] initWithDelegate:self];
     [self addChild:self.guiLayer];
+}
+
+-(void)createStartingItem:(int)tilesNum{
+    FloodItem*startItem = self.floodItems[0][tilesNum-1];
+    [startItem setTexture:[[CCTextureCache sharedTextureCache] addImage:@"p1.png"]];
+    self.startingColor = startItem.filename;
+    startItem.isInWinGroup = TRUE;
+    [self.startingGroup addObject:startItem];
 }
 
 -(void) tweenNode: (CCNode  *) node {
@@ -71,7 +82,7 @@
                                            (tileSize)*(j-1)+(winSize.height/2 - (TILESIZE*tilesNumber)/2)+22);
             CCSprite*tile = [[CCSprite alloc] initWithFile:@"Dirt Block.png"];
             tile.position = position;
-            tile.scale = tileSize/TILESIZE;
+            tile.scale = tileSize/tile.boundingBox.size.width;
             [self addChild:tile];
         }
     }
@@ -93,19 +104,12 @@
                                                       position:CGPointMake(i, j)
                                                    andDelegate:nil];
                 image.position = position;
-                image.scale = tileSize/(TILESIZE+8);
+                image.scale = tileSize/(image.boundingBox.size.width+8);
                 self.floodItems[i][j] = image;
                 self.totalItems++;
             }
         }
     }
-    FloodItem*startItem = self.floodItems[0][tilesNumber-1];
-    [self makeEmptySpaces];
-    [self displayItems];
-    [startItem setTexture:[[CCTextureCache sharedTextureCache] addImage:@"p1.png"]];
-    self.startingColor = startItem.filename;
-    startItem.isInWinGroup = TRUE;
-    [self.startingGroup addObject:startItem];
 }
 
 -(void)displayItems{
@@ -120,6 +124,7 @@
                 CGPoint position = CGPointMake((tileSize+2)*i+4 + TILESIZE/2,
                                                (tileSize+2)*j+(winSize.height/2 - (TILESIZE*tilesNumber)/2)+38);
                 CCSprite*sprite = [[CCSprite alloc] initWithFile:@"Tree Tall.png"];
+                sprite.scale = tileSize/sprite.boundingBox.size.width;
                 sprite.zOrder = j*tilesNumber +i;
                 sprite.position = position;
                 [self addChild:sprite];
@@ -128,7 +133,7 @@
     }
 }
 
--(void)makeEmptySpaces{
+-(void)makeEmptySpaces:(int)numOfItemsToDelete{
     FloodItem*startItem = self.floodItems[0][self.floodItems.count-1];
     NSMutableArray*testField = [[NSMutableArray alloc] init];
     for(int i = 0; i<self.floodItems.count; i++){
@@ -139,6 +144,7 @@
     }
     int checkedItems = self.totalItems;
     int totalItems = self.totalItems;
+    int iteration=0;
     while(checkedItems >= totalItems){
         NSLog(@"%d %d", checkedItems, totalItems);
         for(int i = 0; i<self.floodItems.count; i++){
@@ -147,6 +153,10 @@
                 self.floodItems[i][j] = testField[i][j];
             }
         }
+        if(iteration>numOfItemsToDelete){
+            return;
+        }
+        iteration++;
         self.totalItems = totalItems;
         checkedItems = 0;
         NSMutableArray * checkedItemsArray = [[NSMutableArray alloc] init];
@@ -163,7 +173,8 @@
 -(void)removeRandomItemFromField:(NSMutableArray*)field totalItems:(int*)totalItems{
     CGPoint point = CGPointMake((arc4random()%field.count-1)+1, (arc4random()%field.count-1)+1);
     if(![field[(int)point.x][(int)point.y] isEqual:@"empty"]){
-        if(point.x!=0 && point.y < self.floodItems.count-1){
+        if((point.x!=0 && point.y < self.floodItems.count-1) &&
+           (point.y!=0 && point.x < self.floodItems.count-1)){
             *totalItems -= 1;
             field[(int)point.x][(int)point.y] = @"empty";
         }
