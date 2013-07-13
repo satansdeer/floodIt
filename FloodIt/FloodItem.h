@@ -12,7 +12,7 @@
 -(void)floodItemTapped:(id)item;
 @end
 
-@interface FloodItem : CCSprite <CCTargetedTouchDelegate>
+@interface FloodItem : CCSprite <CCTouchOneByOneDelegate>
 
 @property (nonatomic, assign) CGPoint positionInGame;
 @property (nonatomic, assign) NSString* filename;
