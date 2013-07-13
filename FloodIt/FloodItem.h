@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import <spine/spine-cocos2d-iphone.h>
 
 @protocol FloodItemDelegate
 -(void)floodItemTapped:(id)item;
@@ -18,8 +19,10 @@
 @property (nonatomic, assign) NSString* filename;
 @property (nonatomic, assign) id myDelegate;
 @property (nonatomic, assign) BOOL isInWinGroup;
+@property (nonatomic, retain) CCSkeleton* skeletonNode;
 
 -(id)initWithFile:(NSString*)filename position:(CGPoint)position andDelegate:(id)delegate;
 -(void)updateToFilename:(NSString*)file;
+-(void)setSkeletonColor:(NSString*)color;
 
 @end

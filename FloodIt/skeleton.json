@@ -1,0 +1,69 @@
+{
+"bones": [
+	{ "name": "root" },
+	{ "name": "bone1", "parent": "root", "length": 73.02, "x": 0.49, "y": 0.5, "rotation": -91.35 },
+	{ "name": "bone2", "parent": "bone1", "length": 35.8, "x": 72.02, "y": -0.32, "rotation": -52.69 },
+	{ "name": "bone3", "parent": "bone2", "length": 32.44, "x": -0.66, "y": 4.19, "rotation": 110.45 },
+	{ "name": "bone4", "parent": "bone3", "length": 53.37, "x": -40.1, "y": 58.61, "rotation": 20.3 },
+	{ "name": "bone5", "parent": "bone4", "length": 58.05, "x": -0.45, "y": 1.94, "rotation": -155.82 },
+	{ "name": "bone6", "parent": "bone5", "length": 37.01, "x": -0.18, "y": -0.98, "rotation": -98.94 },
+	{ "name": "bone7", "parent": "bone6" }
+],
+"slots": [
+	{ "name": "head", "bone": "root" },
+	{ "name": "body", "bone": "root" },
+	{ "name": "foot", "bone": "root" },
+	{ "name": "foot2", "bone": "root" },
+	{ "name": "arm", "bone": "root" },
+	{ "name": "arm2", "bone": "root" },
+	{ "name": "arm3", "bone": "bone5", "attachment": "arm" },
+	{ "name": "arm4", "bone": "bone4", "attachment": "arm" },
+	{ "name": "body2", "bone": "bone1", "attachment": "body" },
+	{ "name": "foot3", "bone": "bone3", "attachment": "foot" },
+	{ "name": "foot4", "bone": "bone2", "attachment": "foot" },
+	{ "name": "head2", "bone": "bone6", "attachment": "head" }
+],
+"skins": {
+	"default": {
+		"arm3": {
+			"arm": { "x": 63.6, "y": -8.18, "rotation": 169.11, "width": 50, "height": 47 }
+		},
+		"arm4": {
+			"arm": { "x": 65.56, "y": 5.17, "rotation": 13.28, "width": 50, "height": 47 }
+		},
+		"body2": {
+			"body": { "x": 36.05, "y": -2.16, "rotation": 91.35, "width": 84, "height": 84 }
+		},
+		"foot3": {
+			"foot": { "x": 38.03, "y": 16.84, "rotation": 33.59, "width": 50, "height": 30 }
+		},
+		"foot4": {
+			"foot": { "x": 41.7, "y": -19.15, "rotation": 144.04, "width": 50, "height": 30 }
+		},
+		"head2": {
+			"head": { "x": 118.99, "y": -2.08, "rotation": -91.93, "width": 220, "height": 220 }
+		}
+	}
+},
+"animations": {
+	"animation": {
+		"bones": {
+			"bone3": {
+				"rotate": [
+					{ "time": 0, "angle": 7.59 },
+					{ "time": 0.0333, "angle": 16.51 },
+					{ "time": 0.0666, "angle": 25.07 },
+					{ "time": 0.1, "angle": 18.43 },
+					{ "time": 0.1333, "angle": 5.42 },
+					{ "time": 0.1666, "angle": -2.92 }
+				]
+			},
+			"bone2": {
+				"rotate": [
+					{ "time": 0.2, "angle": -16.35 }
+				]
+			}
+		}
+	}
+}
+}

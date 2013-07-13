@@ -63,7 +63,7 @@
 
 -(void)createStartingItem:(int)tilesNum{
     FloodItem*startItem = self.floodItems[0][tilesNum-1];
-    [startItem setTexture:[[CCTextureCache sharedTextureCache] addImage:@"p1.png"]];
+    [startItem setSkeletonColor:@"p1.png"];
     self.startingColor = startItem.filename;
     startItem.isInWinGroup = TRUE;
     [self.startingGroup addObject:startItem];
