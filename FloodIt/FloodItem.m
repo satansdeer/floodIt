@@ -14,11 +14,17 @@
     //if(self = [super initWithFile:filename]){
     if(self = [super initWithFile:@"transparent.png"]){
         self.myDelegate = delegate;
+        self.skeletonNode = [CCSkeleton skeletonWithFile:@"skeleton.json" atlasFile:@"skeleton.atlas"];
+        if ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] &&
+            ([UIScreen mainScreen].scale == 2.0)) {
+            self.skeletonNode.scale = 0.15;
+        } else {
+            self.skeletonNode.scale = 0.3;
+        }
         self.filename = filename;
         self.positionInGame = pos;
-        self.skeletonNode = [CCSkeleton skeletonWithFile:@"skeleton.json" atlasFile:@"skeleton.atlas"];
         [self setSkeletonColor:filename];
-        self.skeletonNode.scale = 0.3;
+        //NSLog(@"%f", self.skeletonNode.boundingBox.size.width);
         self.skeletonNode.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);
         AnimationState_setAnimationByName(self.skeletonNode->state, "animation", true);
         self.skeletonNode->timeScale = 0.3f;
