@@ -32,19 +32,25 @@
         self.moneyLabel.anchorPoint = CGPointMake(0, 0);
         self.moneyLabel.position = CGPointMake(100, winSize.height - self.moneyLabel.boundingBox.size.height-80);
         [self addChild:self.moneyLabel];
-        CCSprite*line = [CCSprite spriteWithFile:@"line.png"];
-        line.scaleX = 0.6;
-        line.position = ccp(winSize.width/2, winSize.height/2);
-        [self addChild:line];
-        CCSprite*slider = [CCSprite spriteWithFile:@"Slider-Button.png"];
-        slider.position = ccp(line.position.x - line.boundingBox.size.width/2, line.position.y);
-        //int highScore = [GameModel sharedModel].highScore;
-        int highScore = 100;
+        int highScore = [GameModel sharedModel].highScore;
         int score = [GameModel sharedModel].score;
-        float desiredXposition = line.boundingBox.size.width/highScore*score;
-        [slider runAction:[CCEaseBounceOut actionWithAction:[CCMoveBy actionWithDuration:1 position:ccp(desiredXposition,0)]]];
-        [self addChild:slider];
-        
+        if(score<highScore){
+            CCSprite*line = [CCSprite spriteWithFile:@"line.png"];
+            line.scaleX = 0.6;
+            line.position = ccp(winSize.width/2, winSize.height/2);
+            [self addChild:line];
+            CCSprite*slider = [CCSprite spriteWithFile:@"Slider-Button.png"];
+            slider.position = ccp(line.position.x - line.boundingBox.size.width/2, line.position.y);
+            float desiredXposition = line.boundingBox.size.width/highScore*score;
+            [slider runAction:[CCMoveBy actionWithDuration:1 position:ccp(desiredXposition,0)]];
+            [self addChild:slider];
+        }else{
+            [GameModel sharedModel].highScore = score;
+            CCLabelTTF*highScoreLabel = [[CCLabelTTF alloc] initWithString:@"Highscore" fontName:@"Marker Felt" fontSize:32];
+            highScoreLabel.anchorPoint = CGPointMake(0, 0);
+            highScoreLabel.position = CGPointMake(100, winSize.height - self.scoreLabel.boundingBox.size.height-120);
+            [self addChild:highScoreLabel];
+        }
         CCMenuItemImage *play = [CCMenuItemImage itemWithNormalImage:@"Play.png"
                                                              selectedImage: @"Play.png"
                                                                     target:self
@@ -57,8 +63,25 @@
         myMenu.position = ccp(winSize.width/2, winSize.height/2 - 90);
         [myMenu alignItemsVertically];
         [self addChild:myMenu];
+        [self updateScoreLabel];
     }
     return self;
+}
+
+-(void)updateScoreLabel{
+    if([GameModel sharedModel].score > 0){
+        [GameModel sharedModel].score--;
+        if([GameModel sharedModel].score%5 == 0){
+            [GameModel sharedModel].money++;
+        }
+        [self.moneyLabel setString:[NSString stringWithFormat:@"Money: %d",[GameModel sharedModel].money]];
+        [self.scoreLabel setString:[NSString stringWithFormat:@"Score: %d",[GameModel sharedModel].score]];
+        id delay = [CCDelayTime actionWithDuration:0.05];
+        CCCallBlock*block = [CCCallBlock actionWithBlock:^(void){
+            [self updateScoreLabel];
+        }];
+        [self runAction:[CCSequence actions:delay,block, nil]];
+    }
 }
 
 -(void)exitToMenu: (CCMenuItem*)menuItem{
