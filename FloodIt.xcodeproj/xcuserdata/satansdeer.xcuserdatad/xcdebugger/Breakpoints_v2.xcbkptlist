@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
             endingLineNumber = "27"
-            landmarkName = "-initWithFile:position:andDelegate:"
+            landmarkName = "-setupSkeleton:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -10,6 +10,9 @@
 
 @interface ScoreLayer : CCLayerColor
 
+@property (nonatomic, retain) CCLabelTTF*scoreLabel;
+@property (nonatomic, retain) CCLabelTTF*moneyLabel;
+
 +(CCScene *) scene;
 
 @end

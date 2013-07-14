@@ -38,23 +38,35 @@
     } else {
         self.skeletonNode.scale = 0.3;
     }
+    AnimationStateData_setMixByName(self.skeletonNode->state->data, "walk", "idle", 0.2f);
+	AnimationStateData_setMixByName(self.skeletonNode->state->data, "idle", "walk", 0.2f);
     self.skeletonNode.position = ccp(self.tileSize.width/2, self.tileSize.height/2);
     AnimationState_setAnimationByName(self.skeletonNode->state, "idle", true);
     self.skeletonNode->timeScale = 0.3f;
     self.skeletonNode->timeScale = 0.3f;
     [self addChild:self.skeletonNode];
+   // [self scheduleUpdate];
+}
+
+- (void) update:(ccTime)delta {
+
 }
 
 -(void) changeAnimation {
     static int counter = 0;
-    if((arc4random()%36)==0){
+    if(AnimationState_isComplete(self.skeletonNode->state)){
+    if((arc4random()%2)==0){
+        //AnimationState_update(self.skeletonNode->state, 0);
+        //AnimationState_apply(self.skeletonNode->state, self.skeletonNode->skeleton);
         AnimationState_setAnimationByName(self.skeletonNode->state, "walk", false);
     }else{
-        AnimationState_clearAnimation(self.skeletonNode->state);
+        //AnimationState_update(self.skeletonNode->state, 0);
+        //AnimationState_apply(self.skeletonNode->state, self.skeletonNode->skeleton);
         AnimationState_setAnimationByName(self.skeletonNode->state, "idle", true);
     }
+    }
     counter++;
-        double time = (arc4random()%5)+1;
+        double time = 2;
         id delay = [CCDelayTime actionWithDuration: time];
         id callbackAction = [CCCallFunc actionWithTarget: self selector: @selector(changeAnimation)];
         id sequence = [CCSequence actions: delay, callbackAction, nil];
@@ -92,11 +104,20 @@
     }
 }
 
+-(void)updateAsset:(NSString*)filename{
+    CCScaleBy *scaleDown;
+    CCScaleBy *scaleUp;
+    scaleDown = [CCScaleBy actionWithDuration:0.1 scaleX:2 scaleY:0.5];
+    scaleUp = [CCScaleBy actionWithDuration:0.1 scaleX:0.5 scaleY:2];
+    CCCallBlock*block = [CCCallBlock actionWithBlock:^(void){
+        [self setupSkeleton:filename];
+        [self setSkeletonColor:filename];
+    }];
+    [self runAction:[CCSequence actions:scaleDown,block,scaleUp, nil]];
+}
+
 -(void)updateToFilename:(NSString*)file{
     self.filename = file;
-    [self setupSkeleton:file];
-    [self setSkeletonColor:file];
-    //[self setTexture:[[CCTextureCache sharedTextureCache] addImage:file]];
 }
 
 @end

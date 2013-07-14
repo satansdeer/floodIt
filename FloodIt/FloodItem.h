@@ -25,5 +25,5 @@
 -(id)initWithFile:(NSString*)filename position:(CGPoint)position andDelegate:(id)delegate;
 -(void)updateToFilename:(NSString*)file;
 -(void)setSkeletonColor:(NSString*)color;
-
+-(void)updateAsset:(NSString*)filename;
 @end

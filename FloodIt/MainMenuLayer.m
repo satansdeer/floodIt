@@ -10,6 +10,7 @@
 // Import the interfaces
 #import "MainMenuLayer.h"
 #import "GameFieldLayer.h"
+#import "GameModel.h"
 
 #pragma mark - HelloWorldLayer
 
@@ -59,6 +60,9 @@
 }
 
 -(void) play: (CCMenuItem *) menuItem {
+    [GameModel sharedModel].level = 1;
+    [GameModel sharedModel].turns = 25;
+    [GameModel sharedModel].score = 0;
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameFieldLayer scene] withColor:ccWHITE]];
 }
 

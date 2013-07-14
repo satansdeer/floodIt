@@ -53,7 +53,7 @@
     self.availableColors = availableColors;
     [self drawBackground:tilesNum];
     [self placeTiles:tilesNum];
-    [self makeEmptySpaces:2];
+    [self makeEmptySpaces:0];
     [self displayItems];
     [self createStartingItem:tilesNum];
     self.colorPanel = [[ColorPanel alloc] initWithDelegate:self andAvailableColors:self.availableColors];
@@ -64,7 +64,7 @@
 
 -(void)createStartingItem:(int)tilesNum{
     FloodItem*startItem = self.floodItems[0][tilesNum-1];
-    [startItem updateToFilename:@"p1.png"];
+    [startItem updateAsset:@"p1.png"];
     self.startingColor = startItem.filename;
     startItem.isInWinGroup = TRUE;
     [self.startingGroup addObject:startItem];
@@ -269,6 +269,7 @@
     if(![item isEqual:@"empty"]){
     if(![self.startingGroup containsObject:item]){
         [self.startingGroup addObject:item];
+        [item updateAsset:@"p1.png"];
         [GameModel sharedModel].score++;
     }
     item.isInWinGroup = TRUE;
@@ -338,7 +339,7 @@
 
 -(void)openScore{
     [[LayerManager sharedManager] clear:self];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[ScoreLayer scene] withColor:ccWHITE]];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:0.5 scene:[ScoreLayer scene] withColor:ccWHITE]];
 }
 
 -(void)applyWinSequence{
@@ -362,9 +363,6 @@
 }
 
 -(void)loose{
-    [GameModel sharedModel].level = 1;
-    [GameModel sharedModel].turns = 25;
-    [GameModel sharedModel].score = 0;
     [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
     [self applyLooseSequence];
 }
