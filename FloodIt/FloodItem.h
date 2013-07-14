@@ -20,6 +20,7 @@
 @property (nonatomic, assign) id myDelegate;
 @property (nonatomic, assign) BOOL isInWinGroup;
 @property (nonatomic, retain) CCSkeleton* skeletonNode;
+@property (nonatomic, assign) CGSize tileSize;
 
 -(id)initWithFile:(NSString*)filename position:(CGPoint)position andDelegate:(id)delegate;
 -(void)updateToFilename:(NSString*)file;

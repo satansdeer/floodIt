@@ -46,7 +46,16 @@
 	}
 },
 "animations": {
-	"animation": {
+	"idle": {
+		"bones": {
+			"bone6": {
+				"rotate": [
+					{ "time": 0, "angle": 0 }
+				]
+			}
+		}
+	},
+	"walk": {
 		"bones": {
 			"bone3": {
 				"rotate": [

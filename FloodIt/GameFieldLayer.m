@@ -64,7 +64,7 @@
 
 -(void)createStartingItem:(int)tilesNum{
     FloodItem*startItem = self.floodItems[0][tilesNum-1];
-    [startItem setSkeletonColor:@"p1.png"];
+    [startItem updateToFilename:@"p1.png"];
     self.startingColor = startItem.filename;
     startItem.isInWinGroup = TRUE;
     [self.startingGroup addObject:startItem];

@@ -187,11 +187,13 @@
 		6C5C9AC51791E8AA00C26FF5 /* Slot.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AB01791E8AA00C26FF5 /* Slot.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6C5C9AC61791E8AA00C26FF5 /* SlotData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AB21791E8AA00C26FF5 /* SlotData.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6C5C9AC81791EDD900C26FF5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5C9AC71791EDD900C26FF5 /* CoreText.framework */; };
-		6C5C9ACD1791EEDD00C26FF5 /* skeleton.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ACA1791EEDD00C26FF5 /* skeleton.atlas */; };
-		6C5C9ACE1791EEDD00C26FF5 /* skeleton.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ACB1791EEDD00C26FF5 /* skeleton.json */; };
-		6C5C9ACF1791EEDD00C26FF5 /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ACC1791EEDD00C26FF5 /* skeleton.png */; };
 		6C5C9AD11791F54B00C26FF5 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD01791F54B00C26FF5 /* transparent.png */; };
 		6C5C9AD51792ACB100C26FF5 /* LayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD41792ACB100C26FF5 /* LayerManager.m */; };
+		6C5C9AD91792C21300C26FF5 /* skeleton.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD61792C21300C26FF5 /* skeleton.atlas */; };
+		6C5C9ADA1792C21300C26FF5 /* skeleton.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD71792C21300C26FF5 /* skeleton.json */; };
+		6C5C9ADB1792C21300C26FF5 /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD81792C21300C26FF5 /* skeleton.png */; };
+		6C5C9AE01792D6AA00C26FF5 /* skeleton2.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ADE1792D6AA00C26FF5 /* skeleton2.atlas */; };
+		6C5C9AE11792D6AA00C26FF5 /* skeleton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ADF1792D6AA00C26FF5 /* skeleton2.png */; };
 		6C6E794D178879D400C6BE7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794C178879D400C6BE7B /* QuartzCore.framework */; };
 		6C6E794F178879D400C6BE7B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794E178879D400C6BE7B /* OpenGLES.framework */; };
 		6C6E7951178879D400C6BE7B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E7950178879D400C6BE7B /* OpenAL.framework */; };
@@ -568,12 +570,14 @@
 		6C5C9AB31791E8AA00C26FF5 /* SlotData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlotData.h; sourceTree = "<group>"; };
 		6C5C9AB41791E8AA00C26FF5 /* spine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spine.h; sourceTree = "<group>"; };
 		6C5C9AC71791EDD900C26FF5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		6C5C9ACA1791EEDD00C26FF5 /* skeleton.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skeleton.atlas; sourceTree = "<group>"; };
-		6C5C9ACB1791EEDD00C26FF5 /* skeleton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton.json; sourceTree = "<group>"; };
-		6C5C9ACC1791EEDD00C26FF5 /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		6C5C9AD01791F54B00C26FF5 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
 		6C5C9AD31792ACB100C26FF5 /* LayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerManager.h; sourceTree = "<group>"; };
 		6C5C9AD41792ACB100C26FF5 /* LayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerManager.m; sourceTree = "<group>"; };
+		6C5C9AD61792C21300C26FF5 /* skeleton.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skeleton.atlas; sourceTree = "<group>"; };
+		6C5C9AD71792C21300C26FF5 /* skeleton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton.json; sourceTree = "<group>"; };
+		6C5C9AD81792C21300C26FF5 /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
+		6C5C9ADE1792D6AA00C26FF5 /* skeleton2.atlas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = skeleton2.atlas; sourceTree = "<group>"; };
+		6C5C9ADF1792D6AA00C26FF5 /* skeleton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton2.png; sourceTree = "<group>"; };
 		6C6E7949178879D400C6BE7B /* FloodIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloodIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6E794C178879D400C6BE7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C6E794E178879D400C6BE7B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1078,9 +1082,9 @@
 		6C5C9AC91791EEB100C26FF5 /* zombie */ = {
 			isa = PBXGroup;
 			children = (
-				6C5C9ACA1791EEDD00C26FF5 /* skeleton.atlas */,
-				6C5C9ACB1791EEDD00C26FF5 /* skeleton.json */,
-				6C5C9ACC1791EEDD00C26FF5 /* skeleton.png */,
+				6C5C9ADD1792D69A00C26FF5 /* zombie2 */,
+				6C5C9ADC1792D68C00C26FF5 /* zombie1 */,
+				6C5C9AD71792C21300C26FF5 /* skeleton.json */,
 			);
 			name = zombie;
 			sourceTree = "<group>";
@@ -1092,6 +1096,24 @@
 				6C5C9AD41792ACB100C26FF5 /* LayerManager.m */,
 			);
 			name = LayerManager;
+			sourceTree = "<group>";
+		};
+		6C5C9ADC1792D68C00C26FF5 /* zombie1 */ = {
+			isa = PBXGroup;
+			children = (
+				6C5C9AD61792C21300C26FF5 /* skeleton.atlas */,
+				6C5C9AD81792C21300C26FF5 /* skeleton.png */,
+			);
+			name = zombie1;
+			sourceTree = "<group>";
+		};
+		6C5C9ADD1792D69A00C26FF5 /* zombie2 */ = {
+			isa = PBXGroup;
+			children = (
+				6C5C9ADE1792D6AA00C26FF5 /* skeleton2.atlas */,
+				6C5C9ADF1792D6AA00C26FF5 /* skeleton2.png */,
+			);
+			name = zombie2;
 			sourceTree = "<group>";
 		};
 		6C6E7940178879D400C6BE7B = {
@@ -1477,10 +1499,12 @@
 				6C1879771790B24600D3DEFD /* win@2x.png in Resources */,
 				6C1879781790B24600D3DEFD /* loose@2x.png in Resources */,
 				6C1879791790B24600D3DEFD /* win.png in Resources */,
-				6C5C9ACD1791EEDD00C26FF5 /* skeleton.atlas in Resources */,
-				6C5C9ACE1791EEDD00C26FF5 /* skeleton.json in Resources */,
-				6C5C9ACF1791EEDD00C26FF5 /* skeleton.png in Resources */,
 				6C5C9AD11791F54B00C26FF5 /* transparent.png in Resources */,
+				6C5C9AD91792C21300C26FF5 /* skeleton.atlas in Resources */,
+				6C5C9ADA1792C21300C26FF5 /* skeleton.json in Resources */,
+				6C5C9ADB1792C21300C26FF5 /* skeleton.png in Resources */,
+				6C5C9AE01792D6AA00C26FF5 /* skeleton2.atlas in Resources */,
+				6C5C9AE11792D6AA00C26FF5 /* skeleton2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
