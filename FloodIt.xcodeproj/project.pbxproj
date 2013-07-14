@@ -191,6 +191,7 @@
 		6C5C9ACE1791EEDD00C26FF5 /* skeleton.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ACB1791EEDD00C26FF5 /* skeleton.json */; };
 		6C5C9ACF1791EEDD00C26FF5 /* skeleton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ACC1791EEDD00C26FF5 /* skeleton.png */; };
 		6C5C9AD11791F54B00C26FF5 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD01791F54B00C26FF5 /* transparent.png */; };
+		6C5C9AD51792ACB100C26FF5 /* LayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD41792ACB100C26FF5 /* LayerManager.m */; };
 		6C6E794D178879D400C6BE7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794C178879D400C6BE7B /* QuartzCore.framework */; };
 		6C6E794F178879D400C6BE7B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794E178879D400C6BE7B /* OpenGLES.framework */; };
 		6C6E7951178879D400C6BE7B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E7950178879D400C6BE7B /* OpenAL.framework */; };
@@ -571,6 +572,8 @@
 		6C5C9ACB1791EEDD00C26FF5 /* skeleton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = skeleton.json; sourceTree = "<group>"; };
 		6C5C9ACC1791EEDD00C26FF5 /* skeleton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton.png; sourceTree = "<group>"; };
 		6C5C9AD01791F54B00C26FF5 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
+		6C5C9AD31792ACB100C26FF5 /* LayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerManager.h; sourceTree = "<group>"; };
+		6C5C9AD41792ACB100C26FF5 /* LayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayerManager.m; sourceTree = "<group>"; };
 		6C6E7949178879D400C6BE7B /* FloodIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloodIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6E794C178879D400C6BE7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C6E794E178879D400C6BE7B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1082,6 +1085,15 @@
 			name = zombie;
 			sourceTree = "<group>";
 		};
+		6C5C9AD21792AC9700C26FF5 /* LayerManager */ = {
+			isa = PBXGroup;
+			children = (
+				6C5C9AD31792ACB100C26FF5 /* LayerManager.h */,
+				6C5C9AD41792ACB100C26FF5 /* LayerManager.m */,
+			);
+			name = LayerManager;
+			sourceTree = "<group>";
+		};
 		6C6E7940178879D400C6BE7B = {
 			isa = PBXGroup;
 			children = (
@@ -1295,6 +1307,7 @@
 		6CA7FF3A178B6BBA00BF9477 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				6C5C9AD21792AC9700C26FF5 /* LayerManager */,
 				6C6E7AF01788828700C6BE7B /* FloodItem.h */,
 				6C6E7AF11788828700C6BE7B /* FloodItem.m */,
 				6C6E7AD9178879D600C6BE7B /* GameFieldLayer.h */,
@@ -1613,6 +1626,7 @@
 				6C5C9AC41791E8AA00C26FF5 /* Skin.c in Sources */,
 				6C5C9AC51791E8AA00C26FF5 /* Slot.c in Sources */,
 				6C5C9AC61791E8AA00C26FF5 /* SlotData.c in Sources */,
+				6C5C9AD51792ACB100C26FF5 /* LayerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

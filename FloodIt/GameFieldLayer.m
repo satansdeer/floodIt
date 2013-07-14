@@ -17,6 +17,7 @@
 #import "GuiLayer.h"
 #import "GameModel.h"
 #import "ScoreLayer.h"
+#import "LayerManager.h"
 
 #define TILESIZE 50
 
@@ -38,10 +39,10 @@
 {
 	if( (self=[super initWithColor:ccc4(0, 0, 0, 255)]) ) {
         GameModel*gameModel = [GameModel sharedModel];
-        NSLog(@"!!!!! level %d", gameModel.level);
         self.totalItems = 0;
         NSDictionary*level = gameModel.levels[gameModel.level-1];
         NSNumber *tilesnum = [level objectForKey:@"tilesNum"];
+        [[LayerManager sharedManager] addLayersToNode:self];
         [self startWithTilesNum:[tilesnum integerValue] andAvailableColors:[level objectForKey:@"colors"]];
 	}
 	return self;
@@ -56,9 +57,9 @@
     [self displayItems];
     [self createStartingItem:tilesNum];
     self.colorPanel = [[ColorPanel alloc] initWithDelegate:self andAvailableColors:self.availableColors];
-    [self addChild:self.colorPanel];
+    [[LayerManager sharedManager].guiLayer addChild:self.colorPanel];
     self.guiLayer = [[GuiLayer alloc] initWithDelegate:self];
-    [self addChild:self.guiLayer];
+    [[LayerManager sharedManager].guiLayer addChild:self.guiLayer];
 }
 
 -(void)createStartingItem:(int)tilesNum{
@@ -84,7 +85,7 @@
             CCSprite*tile = [[CCSprite alloc] initWithFile:@"Dirt Block.png"];
             tile.position = position;
             tile.scale = tileSize/tile.boundingBox.size.width;
-            [self addChild:tile];
+            [[LayerManager sharedManager].backgroundLayer addChild:tile];
         }
     }
 }
@@ -117,7 +118,9 @@
     for(int i = 0; i<self.floodItems.count; i++){
         for(int j = 0; j<self.floodItems.count; j++){
             if(![self.floodItems[i][j] isEqual:@"empty"]){
-                [self addChild:self.floodItems[i][j]];
+                FloodItem*item = self.floodItems[i][j];
+                item.zOrder = self.floodItems.count-j;
+                [[LayerManager sharedManager].objectsLayer addChild:self.floodItems[i][j]];
             }else{
                 int tilesNumber = self.floodItems.count;
                 CGSize winSize = [[CCDirector sharedDirector] winSize];
@@ -127,7 +130,8 @@
                 CCSprite*sprite = [[CCSprite alloc] initWithFile:@"Tree Tall.png"];
                 sprite.scale = tileSize/sprite.boundingBox.size.width;
                 sprite.position = position;
-                [self addChild:sprite];
+                sprite.zOrder = self.floodItems.count-j;
+                [[LayerManager sharedManager].objectsLayer addChild:sprite];
             }
         }
     }
@@ -300,7 +304,6 @@
 }
 
 -(void)checkStartgroupNeighbourhood{
-    NSLog(@"%@", [self.startingGroup[0] filename]);
     for (FloodItem*item in self.startingGroup) {
         item.isInWinGroup = FALSE;
     }
@@ -334,6 +337,7 @@
 }
 
 -(void)openScore{
+    [[LayerManager sharedManager] clear:self];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[ScoreLayer scene] withColor:ccWHITE]];
 }
 
@@ -353,6 +357,7 @@
 }
 
 -(void)nextLevel{
+    [[LayerManager sharedManager] clear:self];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameFieldLayer scene] withColor:ccWHITE]];
 }
 
