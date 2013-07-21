@@ -393,6 +393,7 @@
 
 -(void)exitToMenu{
     [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
+    [[LayerManager sharedManager] clear:self];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] withColor:ccWHITE]];
 }
 

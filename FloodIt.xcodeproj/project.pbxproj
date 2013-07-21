@@ -196,6 +196,8 @@
 		6C5C9AE11792D6AA00C26FF5 /* skeleton2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9ADF1792D6AA00C26FF5 /* skeleton2.png */; };
 		6C5C9AE31793337D00C26FF5 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AE21793337D00C26FF5 /* line.png */; };
 		6C5C9AE5179335D300C26FF5 /* Slider-Button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AE4179335D300C26FF5 /* Slider-Button@2x.png */; };
+		6C5F6F0D179444E100135507 /* zombicon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F6F0C179444E100135507 /* zombicon.png */; };
+		6C5F6F0F179444E600135507 /* zombicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5F6F0E179444E600135507 /* zombicon@2x.png */; };
 		6C6E794D178879D400C6BE7B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794C178879D400C6BE7B /* QuartzCore.framework */; };
 		6C6E794F178879D400C6BE7B /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E794E178879D400C6BE7B /* OpenGLES.framework */; };
 		6C6E7951178879D400C6BE7B /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C6E7950178879D400C6BE7B /* OpenAL.framework */; };
@@ -582,6 +584,8 @@
 		6C5C9ADF1792D6AA00C26FF5 /* skeleton2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skeleton2.png; sourceTree = "<group>"; };
 		6C5C9AE21793337D00C26FF5 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		6C5C9AE4179335D300C26FF5 /* Slider-Button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Slider-Button@2x.png"; sourceTree = "<group>"; };
+		6C5F6F0C179444E100135507 /* zombicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zombicon.png; sourceTree = "<group>"; };
+		6C5F6F0E179444E600135507 /* zombicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zombicon@2x.png"; sourceTree = "<group>"; };
 		6C6E7949178879D400C6BE7B /* FloodIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloodIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C6E794C178879D400C6BE7B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6C6E794E178879D400C6BE7B /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1124,6 +1128,8 @@
 		6C6E7940178879D400C6BE7B = {
 			isa = PBXGroup;
 			children = (
+				6C5F6F0E179444E600135507 /* zombicon@2x.png */,
+				6C5F6F0C179444E100135507 /* zombicon.png */,
 				6C5C9AC71791EDD900C26FF5 /* CoreText.framework */,
 				6C6E795E178879D400C6BE7B /* FloodIt */,
 				6C6E794B178879D400C6BE7B /* Frameworks */,
@@ -1513,6 +1519,8 @@
 				6C5C9AE11792D6AA00C26FF5 /* skeleton2.png in Resources */,
 				6C5C9AE31793337D00C26FF5 /* line.png in Resources */,
 				6C5C9AE5179335D300C26FF5 /* Slider-Button@2x.png in Resources */,
+				6C5F6F0D179444E100135507 /* zombicon.png in Resources */,
+				6C5F6F0F179444E600135507 /* zombicon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
