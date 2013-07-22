@@ -25,7 +25,7 @@
             item.scale = tileSize/item.boundingBox.size.width;
             item.anchorPoint = CGPointMake(0, 0);
             float totalSize = colors.count*(item.boundingBox.size.width+2);
-            item.position = CGPointMake(i*(item.boundingBox.size.width+2) + (winSize.width/2 - totalSize/2), 8);
+            item.position = CGPointMake(i*(item.boundingBox.size.width+2) + (winSize.width/2 - totalSize/2), 14);
             [self.items addObject:item];
             [self addChild:item];
             i++;

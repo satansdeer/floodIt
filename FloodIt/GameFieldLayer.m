@@ -37,7 +37,7 @@
 
 -(id) init
 {
-	if( (self=[super initWithColor:ccc4(0, 0, 0, 255)]) ) {
+	if( (self=[super initWithColor:ccc4(153, 204, 0, 255)]) ) {
         GameModel*gameModel = [GameModel sharedModel];
         self.totalItems = 0;
         NSDictionary*level = gameModel.levels[gameModel.level-1];
@@ -75,7 +75,7 @@
 }
 
 -(void)drawBackground:(int)tilesNumber{
-    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    /*CGSize winSize = [[CCDirector sharedDirector] winSize];
     float tileSize = (winSize.width-8)/tilesNumber;
     for(int i = 0; i<tilesNumber; i++){
         self.floodItems[i] = [[NSMutableArray alloc] init];
@@ -87,7 +87,11 @@
             tile.scale = tileSize/tile.boundingBox.size.width;
             [[LayerManager sharedManager].backgroundLayer addChild:tile];
         }
-    }
+    }*/
+    CCSprite*back = [[CCSprite alloc] initWithFile:@"back.png"];
+    back.anchorPoint = ccp(0,0);
+    back.position = ccp(0,84);
+    [[LayerManager sharedManager].backgroundLayer addChild:back];
 }
 
 -(void)placeTiles:(int)tilesNumber{
@@ -100,8 +104,8 @@
             NSString*filename;
             filename = [self randomFileName:FALSE];
             if(filename){
-                CGPoint position = CGPointMake((tileSize+2)*i+4 + TILESIZE/2,
-                                           (tileSize+2)*j+(winSize.height/2 - (TILESIZE*tilesNumber)/2)+30);
+                CGPoint position = CGPointMake((tileSize+2)*i+4 + tileSize/2,
+                                           (tileSize+2)*j+(winSize.height/2 - (tileSize*tilesNumber)/2)+tileSize/3+tileSize/4);
                 FloodItem* image = [[FloodItem alloc] initWithFile:filename
                                                       position:CGPointMake(i, j)
                                                    andDelegate:nil];

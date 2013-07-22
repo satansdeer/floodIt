@@ -17,14 +17,14 @@
 {
 	if( (self=[super init]) ) {
         self.myDelegate = delegate;
-        CCMenuItemImage *playButton = [CCMenuItemImage itemWithNormalImage:@"Menu.png"
-                                                             selectedImage: @"Menu.png"
+        CCMenuItemImage *playButton = [CCMenuItemImage itemWithNormalImage:@"pause.png"
+                                                             selectedImage:@"pause.png"
                                                                     target:self
                                                                   selector:@selector(menuTapped)];
         
         CCMenu * myMenu = [CCMenu menuWithItems:playButton, nil];
         CGSize winSize = [[CCDirector sharedDirector] winSize];
-        myMenu.position = CGPointMake(4 + playButton.boundingBox.size.width/2, winSize.height - playButton.boundingBox.size.height/2-8);
+        myMenu.position = CGPointMake(8 + playButton.boundingBox.size.width/2, winSize.height - playButton.boundingBox.size.height/2-8);
         myMenu.anchorPoint = CGPointMake(0, 0);
         playButton.scale = 0.6;
         

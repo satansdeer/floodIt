@@ -19,11 +19,12 @@
 @property (nonatomic, assign) NSString* filename;
 @property (nonatomic, assign) id myDelegate;
 @property (nonatomic, assign) BOOL isInWinGroup;
-@property (nonatomic, retain) CCSkeleton* skeletonNode;
+@property (nonatomic, retain) CCSprite*image;
 @property (nonatomic, assign) CGSize tileSize;
+@property (nonatomic, retain) NSString*currentColor;
 
 -(id)initWithFile:(NSString*)filename position:(CGPoint)position andDelegate:(id)delegate;
 -(void)updateToFilename:(NSString*)file;
--(void)setSkeletonColor:(NSString*)color;
+-(void)setColor:(NSString*)color;
 -(void)updateAsset:(NSString*)filename;
 @end
