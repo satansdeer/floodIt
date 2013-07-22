@@ -62,9 +62,20 @@
             self.image.position = ccp(10,0);
             self.image.scale = 0.8;
             [self addChild:self.image];
+            [self jump];
         }
     }
     self.currentColor = color;
+}
+
+-(void)jump{
+    CCDelayTime *delay = [CCDelayTime actionWithDuration:arc4random()%8];
+    CCMoveBy*moveup = [CCMoveBy actionWithDuration:0.2 position:ccp(0, 6)];
+    CCMoveBy*movedown = [CCMoveBy actionWithDuration:0.2 position:ccp(0, -6)];
+    CCCallBlock*block = [CCCallBlock actionWithBlock:^(void){
+        [self jump];
+    }];
+    [self.image runAction:[CCSequence actions:delay,moveup,movedown,block, nil]];
 }
 
 -(void)pulsate{
