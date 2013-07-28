@@ -669,6 +669,8 @@
 		6CA7FF38178B6BB600BF9477 /* ColorPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPanel.m; sourceTree = "<group>"; };
 		6CEE13D8178E117000B9BD49 /* p2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2@2x.png"; sourceTree = "<group>"; };
 		6CEE13D9178E117000B9BD49 /* p1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1@2x.png"; sourceTree = "<group>"; };
+		DDA809A417A5AD050056CD92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "FloodIt/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		DDA809A517A5AD720056CD92 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "FloodIt/Resources/Default@2x.png"; sourceTree = "<group>"; };
 		DDDBBF2F179C6DD600E9F126 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
 		DDDBBF30179C6DD600E9F126 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
 		DDDBBF31179C6DD600E9F126 /* crystal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crystal.png; sourceTree = "<group>"; };
@@ -1136,6 +1138,8 @@
 		6C6E7940178879D400C6BE7B = {
 			isa = PBXGroup;
 			children = (
+				DDA809A517A5AD720056CD92 /* Default@2x.png */,
+				DDA809A417A5AD050056CD92 /* Default-568h@2x.png */,
 				6C5F6F0E179444E600135507 /* zombicon@2x.png */,
 				6C5F6F0C179444E100135507 /* zombicon.png */,
 				6C5C9AC71791EDD900C26FF5 /* CoreText.framework */,
@@ -1774,6 +1778,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1798,6 +1803,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

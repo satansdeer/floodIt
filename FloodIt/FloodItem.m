@@ -110,6 +110,8 @@
     [self runAction:[CCSequence actions:scaleDown,block,scaleUp, nil]];
 }
 
+
+
 -(void)updateToFilename:(NSString*)file{
     self.filename = file;
 }

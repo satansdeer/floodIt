@@ -75,8 +75,8 @@
 }
 
 -(void)drawBackground:(int)tilesNumber{
-    /*CGSize winSize = [[CCDirector sharedDirector] winSize];
-    float tileSize = (winSize.width-8)/tilesNumber;
+    CGSize winSize = [[CCDirector sharedDirector] winSize];
+    /*float tileSize = (winSize.width-8)/tilesNumber;
     for(int i = 0; i<tilesNumber; i++){
         self.floodItems[i] = [[NSMutableArray alloc] init];
         for(int j = tilesNumber; j>0; j--){
@@ -89,8 +89,10 @@
         }
     }*/
     CCSprite*back = [[CCSprite alloc] initWithFile:@"back.png"];
+    float scale = winSize.width/back.boundingBox.size.width;
+    back.scale = scale;
     back.anchorPoint = ccp(0,0);
-    back.position = ccp(0,84);
+    back.position = ccp(0,winSize.height/2 - back.boundingBox.size.height/2);
     [[LayerManager sharedManager].backgroundLayer addChild:back];
 }
 
