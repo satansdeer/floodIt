@@ -10,6 +10,9 @@
 
 @interface Utils : NSObject
 
+@property (nonatomic, retain) NSArray* availableColors;
+
++ (Utils *)sharedUtils;
 +(NSString*)randomArrayElementFromArray:(NSArray*)array canBeEmpty:(BOOL)canBeEmpty;
 
 @end

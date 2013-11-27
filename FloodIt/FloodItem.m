@@ -7,13 +7,14 @@
 //
 
 #import "FloodItem.h"
+#import "Utils.h"
 
 @implementation FloodItem
 
 -(id)initWithFile:(NSString*)filename position:(CGPoint)pos andDelegate:(id)delegate{
-    //if(self = [super initWithFile:filename]){
     if(self = [super initWithFile:@"transparent.png"]){
         self.myDelegate = delegate;
+        self.counter = 0;
         self.tileSize = self.boundingBox.size;
         CCSprite*shadow = [[CCSprite alloc] initWithFile:@"shadow.png"];
         shadow.anchorPoint = ccp(0,0);
@@ -22,48 +23,65 @@
         self.image = [[CCSprite alloc] initWithFile:@"crystal.png"];
         self.image.anchorPoint = ccp(0,0);
         self.image.scale = 0.8;
-        //self.image.position = ccp(self.tileSize.width/2 - self.image.boundingBox.size.width/2 -10,0);
         [self addChild:self.image];
-        //[self setupSkeleton:filename];
         self.positionInGame = pos;
-        self.filename = filename;
         [self setColor:filename];
         [self pulsate];
+        self.counterText = [[CCLabelTTF alloc] initWithString:[NSString stringWithFormat:@"%d", self.counter]
+                                                     fontName:@"Marker Felt" fontSize:72];
+        self.counterText.color = ccc3(0, 0, 0);
+        self.counterText.position = ccp(self.image.contentSize.width/2,
+                                        self.image.contentSize.height/2 - self.counterText.contentSize.height/2);
+        [self addChild:self.counterText];
     }
     return self;
 }
 
+-(void)updateCounter{
+    if(!self.isInWinGroup){
+        self.counter--;
+        if(self.counter < 0){
+            self.counter = (arc4random() % 2)+2;
+            [self setColor:[Utils randomArrayElementFromArray:[Utils sharedUtils].availableColors canBeEmpty:NO]];
+        }
+        self.counterText.string = [NSString stringWithFormat:@"%d", self.counter];
+    }
+}
 
 -(void)setColor:(NSString*)color{
-    if([color isEqual:@"red.png"]){
+    [self removeChild:self.image];
+    if([color isEqualToString:@"red.png"]){
         self.image.color = ccc3(219, 57, 30);
     }
-    if([color isEqual:@"green.png"]){
+    if([color isEqualToString:@"white.png"]){
         self.image.color = ccc3(255, 255, 255);
     }
-    if([color isEqual:@"blue.png"]){
+    if([color isEqualToString:@"blue.png"]){
         self.image.color = ccc3(37, 161, 234);
     }
-    if([color isEqual:@"purple.png"]){
+    if([color isEqualToString:@"purple.png"]){
         self.image.color = ccc3(120, 0, 242);
     }
-    if([color isEqual:@"orange.png"]){
+    if([color isEqualToString:@"orange.png"]){
         self.image.color = ccc3(153, 204, 0);
     }
-    if([color isEqual:@"yellow.png"]){
+    if([color isEqualToString:@"yellow.png"]){
         self.image.color = ccc3(221, 223, 93);
     }
     if([color isEqual:@"p1.png"]){
         self.image.color = ccc3(255, 255, 255);
-        if(self.currentColor){
-            [self removeChild:self.image];
-            self.image = [[CCSprite alloc] initWithFile:@"blue.png"];
-            self.image.anchorPoint = ccp(0,0);
-            self.image.position = ccp(10,0);
-            self.image.scale = 0.8;
-            [self addChild:self.image];
-            [self jump];
-        }
+        self.image = [[CCSprite alloc] initWithFile:@"blue.png"];
+        self.image.anchorPoint = ccp(0,0);
+        self.image.position = ccp(10,0);
+        self.image.scale = 0.8;
+        self.counterText.visible = NO;
+        [self jump];
+    }
+    [self addChild:self.image];
+    
+    if(self.counterText){
+     [self removeChild:self.counterText];
+     [self addChild:self.counterText];
     }
     self.currentColor = color;
 }
@@ -79,16 +97,16 @@
 }
 
 -(void)pulsate{
-    ccColor3B currentColor = self.image.color;
-    ccColor3B tintColor = ccc3(40, 40, 40);
-    if(currentColor.r<tintColor.r){
-        tintColor.r = currentColor.r;
+    ccColor3B pulseCurrentColor = self.image.color;
+    ccColor3B tintColor = ccc3(30, 30, 30);
+    if(pulseCurrentColor.r<tintColor.r){
+        tintColor.r = pulseCurrentColor.r;
     }
-    if(currentColor.g<tintColor.g){
-        tintColor.g = currentColor.g;
+    if(pulseCurrentColor.g<tintColor.g){
+        tintColor.g = pulseCurrentColor.g;
     }
-    if(currentColor.b<tintColor.b){
-        tintColor.b = currentColor.b;
+    if(pulseCurrentColor.b<tintColor.b){
+        tintColor.b = pulseCurrentColor.b;
     }
     CCDelayTime *delay = [CCDelayTime actionWithDuration:arc4random()%8];
     CCTintBy*tintUp = [CCTintBy actionWithDuration:0.6 red:tintColor.r green:tintColor.g blue:tintColor.b];
@@ -108,12 +126,6 @@
         [self setColor:filename];
     }];
     [self runAction:[CCSequence actions:scaleDown,block,scaleUp, nil]];
-}
-
-
-
--(void)updateToFilename:(NSString*)file{
-    self.filename = file;
 }
 
 @end

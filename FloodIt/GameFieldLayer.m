@@ -52,12 +52,13 @@
 
 -(void)startWithTilesNum:(int)tilesNum andAvailableColors:(NSArray*)availableColors{
     self.startingGroup = [[NSMutableArray alloc] init];
-    self.availableColors = availableColors;
+    [Utils sharedUtils].availableColors = availableColors;
     [self drawBackground:tilesNum];
     [self placeTiles:tilesNum];
     [self makeEmptySpaces:0];
     [self displayItems];
     [self createStartingItem:tilesNum];
+    [self updateItemCounters];
     self.guiLayer = [[GuiLayer alloc] initWithDelegate:self];
     [[LayerManager sharedManager].guiLayer addChild:self.guiLayer];
 }
@@ -65,7 +66,7 @@
 -(void)createStartingItem:(int)tilesNum{
     FloodItem*startItem = self.floodItems[0][tilesNum-1];
     [startItem updateAsset:@"p1.png"];
-    self.startingColor = startItem.filename;
+    self.startingColor = startItem.currentColor;
     startItem.isInWinGroup = TRUE;
     [self.startingGroup addObject:startItem];
 }
@@ -87,7 +88,7 @@
     for(int i = 0; i<tilesNumber; i++){
         self.floodItems[i] = [[NSMutableArray alloc] init];
         for(int j = 0; j<tilesNumber; j++){
-            NSString*filename = [Utils randomArrayElementFromArray:self.availableColors canBeEmpty:NO];
+            NSString*filename = [Utils randomArrayElementFromArray:[Utils sharedUtils].availableColors canBeEmpty:NO];
             if(filename){
                 CGPoint position = CGPointMake((tileSize+2)*i+4 + tileSize/2,
                                            (tileSize+2)*j+(winSize.height/2 - (tileSize*tilesNumber)/2)+tileSize/3+tileSize/4);
@@ -236,7 +237,7 @@
 
 -(void)changeWinGroupTo:(NSString*)filename{
     for (FloodItem*item in self.startingGroup) {
-        [item updateToFilename:filename];
+        [item setColor:filename];
     }
 }
 
@@ -270,7 +271,7 @@
     FloodItem*testItem;
     testItem = self.floodItems[(int)testPosition.x][(int)testPosition.y];
     if(![testItem isEqual:@"empty"]){
-        if(item.filename == testItem.filename && ![self.sameColorGroup containsObject:testItem]){
+        if([item.currentColor isEqualToString:testItem.currentColor] && ![self.sameColorGroup containsObject:testItem]){
             [self addSameItemsToWinGroup:testItem];
         }
     }
@@ -352,6 +353,7 @@
 #pragma mark -
 
 -(void)chooseItem:(FloodItem *)item{
+    if(item.isInWinGroup){return;}
     self.sameColorGroup = [[NSMutableArray alloc] init];
     [self addSameItemsToWinGroup:item];
     [self checkStartgroupNeighbourhood];
@@ -370,7 +372,7 @@
     [self addSameItemsToWinGroup:self.startingGroup[0]];
     [self checkStartgroupNeighbourhood];
     for (FloodItem*item in self.startingGroup) {
-        [item updateToFilename:@"p1.png"];
+        item.currentColor = @"p1.png";
     }
     [self.guiLayer update];
     if(self.startingGroup.count == self.totalItems){
@@ -384,7 +386,6 @@
 #pragma mark -
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-    NSLog(@"ccTouchBegan");
         for (NSArray*items in self.floodItems) {
                 for (FloodItem*item in items) {
                     if (CGRectContainsPoint(item.boundingBox, [self convertTouchToNodeSpace:touch])) {
@@ -398,9 +399,22 @@
 
 -(void)floodItemTapped:(id)item{
     FloodItem*floodItem = item;
-    NSLog(@"%@", floodItem.filename);
+    NSLog(@"%@", floodItem.currentColor);
     //[self chooseColor:floodItem.filename];
     [self chooseItem:floodItem];
+    if(floodItem.isInWinGroup){
+        [self updateItemCounters];
+    }
+}
+
+#pragma mark -
+
+-(void)updateItemCounters{
+    for (NSArray*items in self.floodItems) {
+        for (FloodItem*item in items) {
+            [item updateCounter];
+        }
+    }
 }
 
 @end

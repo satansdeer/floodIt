@@ -22,7 +22,6 @@
 @property (nonatomic, retain) NSMutableArray* startingGroup;
 @property (nonatomic, retain) NSMutableArray* sameColorGroup;
 @property (nonatomic, retain) NSString * startingColor;
-@property (nonatomic, retain) NSArray * availableColors;
 @property (nonatomic, retain) GuiLayer*guiLayer;
 @property (nonatomic,assign) int totalItems;
 

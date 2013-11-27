@@ -10,16 +10,18 @@
 
 @interface FloodItem : CCSprite <CCTouchOneByOneDelegate>
 
-@property (nonatomic, assign) CGPoint positionInGame;
-@property (nonatomic, assign) NSString* filename;
-@property (nonatomic, assign) id myDelegate;
-@property (nonatomic, assign) BOOL isInWinGroup;
-@property (nonatomic, retain) CCSprite*image;
-@property (nonatomic, assign) CGSize tileSize;
-@property (nonatomic, retain) NSString*currentColor;
+@property (nonatomic, retain) CCSprite*     image;
+@property (nonatomic, retain) CCLabelTTF*   counterText;
+@property (nonatomic, retain) NSString*     currentColor;
+@property (nonatomic, assign) CGSize        tileSize;
+@property (nonatomic, assign) CGPoint       positionInGame;
+@property (nonatomic, assign) BOOL          isInWinGroup;
+@property (nonatomic, assign) id            myDelegate;
+@property (nonatomic, assign) int           counter;
 
 -(id)initWithFile:(NSString*)filename position:(CGPoint)position andDelegate:(id)delegate;
--(void)updateToFilename:(NSString*)file;
 -(void)setColor:(NSString*)color;
 -(void)updateAsset:(NSString*)filename;
+-(void)updateCounter;
+
 @end
