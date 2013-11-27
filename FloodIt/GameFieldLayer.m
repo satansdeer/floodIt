@@ -18,6 +18,7 @@
 #import "GameModel.h"
 #import "ScoreLayer.h"
 #import "LayerManager.h"
+#import "Utils.h"
 
 #define TILESIZE 50
 
@@ -71,18 +72,6 @@
 
 -(void)drawBackground:(int)tilesNumber{
     CGSize winSize = [[CCDirector sharedDirector] winSize];
-    /*float tileSize = (winSize.width-8)/tilesNumber;
-    for(int i = 0; i<tilesNumber; i++){
-        self.floodItems[i] = [[NSMutableArray alloc] init];
-        for(int j = tilesNumber; j>0; j--){
-            CGPoint position = CGPointMake((tileSize)*i+4 + TILESIZE/2,
-                                           (tileSize)*(j-1)+(winSize.height/2 - (TILESIZE*tilesNumber)/2)+22);
-            CCSprite*tile = [[CCSprite alloc] initWithFile:@"Dirt Block.png"];
-            tile.position = position;
-            tile.scale = tileSize/tile.boundingBox.size.width;
-            [[LayerManager sharedManager].backgroundLayer addChild:tile];
-        }
-    }*/
     CCSprite*back = [[CCSprite alloc] initWithFile:@"back.png"];
     float scale = winSize.width/back.boundingBox.size.width;
     back.scale = scale;
@@ -98,8 +87,7 @@
     for(int i = 0; i<tilesNumber; i++){
         self.floodItems[i] = [[NSMutableArray alloc] init];
         for(int j = 0; j<tilesNumber; j++){
-            NSString*filename;
-            filename = [self randomFileName:FALSE];
+            NSString*filename = [Utils randomArrayElementFromArray:self.availableColors canBeEmpty:NO];
             if(filename){
                 CGPoint position = CGPointMake((tileSize+2)*i+4 + tileSize/2,
                                            (tileSize+2)*j+(winSize.height/2 - (tileSize*tilesNumber)/2)+tileSize/3+tileSize/4);
@@ -214,20 +202,6 @@
         testItem = field[(int)testPosition.x][(int)testPosition.y];
         [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
     }
-    }
-}
-
--(NSString*)randomFileName:(BOOL)canBeEmpty{
-    int r;
-    if(canBeEmpty){
-        r = arc4random() % self.availableColors.count+1;
-    }else{
-        r = arc4random() % self.availableColors.count;
-    }
-    if(r<self.availableColors.count){
-        return self.availableColors[r];
-    }else{
-        return nil;
     }
 }
 
@@ -375,7 +349,7 @@
     [self applyLooseSequence];
 }
 
-#pragma mark - ColorPanelDelegate
+#pragma mark -
 
 -(void)chooseItem:(FloodItem *)item{
     self.sameColorGroup = [[NSMutableArray alloc] init];
@@ -407,13 +381,7 @@
     }
 }
 
-#pragma mark - GuiLayerDelegate
-
--(void)exitToMenu{
-    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-    [[LayerManager sharedManager] clear:self];
-    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] withColor:ccWHITE]];
-}
+#pragma mark -
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
     NSLog(@"ccTouchBegan");

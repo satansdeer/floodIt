@@ -167,25 +167,6 @@
 		6C5C9A891791DD0E00C26FF5 /* TGAlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A2C1791DD0E00C26FF5 /* TGAlib.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6C5C9A8A1791DD0E00C26FF5 /* TransformUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A2E1791DD0E00C26FF5 /* TransformUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6C5C9A8B1791DD0E00C26FF5 /* ZipUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A321791DD0E00C26FF5 /* ZipUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9A8F1791E7EC00C26FF5 /* spine-cocos2d-iphone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A8E1791E7EC00C26FF5 /* spine-cocos2d-iphone.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AB51791E8AA00C26FF5 /* Animation.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A901791E8AA00C26FF5 /* Animation.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AB61791E8AA00C26FF5 /* AnimationState.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A921791E8AA00C26FF5 /* AnimationState.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AB71791E8AA00C26FF5 /* AnimationStateData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A941791E8AA00C26FF5 /* AnimationStateData.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AB81791E8AA00C26FF5 /* Atlas.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A961791E8AA00C26FF5 /* Atlas.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AB91791E8AA00C26FF5 /* AtlasAttachmentLoader.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A981791E8AA00C26FF5 /* AtlasAttachmentLoader.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABA1791E8AA00C26FF5 /* Attachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A9A1791E8AA00C26FF5 /* Attachment.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABB1791E8AA00C26FF5 /* AttachmentLoader.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A9C1791E8AA00C26FF5 /* AttachmentLoader.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABC1791E8AA00C26FF5 /* Bone.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9A9E1791E8AA00C26FF5 /* Bone.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABD1791E8AA00C26FF5 /* BoneData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AA01791E8AA00C26FF5 /* BoneData.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABE1791E8AA00C26FF5 /* extension.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AA21791E8AA00C26FF5 /* extension.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9ABF1791E8AA00C26FF5 /* Json.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AA41791E8AA00C26FF5 /* Json.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC01791E8AA00C26FF5 /* RegionAttachment.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AA61791E8AA00C26FF5 /* RegionAttachment.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC11791E8AA00C26FF5 /* Skeleton.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AA81791E8AA00C26FF5 /* Skeleton.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC21791E8AA00C26FF5 /* SkeletonData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AAA1791E8AA00C26FF5 /* SkeletonData.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC31791E8AA00C26FF5 /* SkeletonJson.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AAC1791E8AA00C26FF5 /* SkeletonJson.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC41791E8AA00C26FF5 /* Skin.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AAE1791E8AA00C26FF5 /* Skin.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC51791E8AA00C26FF5 /* Slot.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AB01791E8AA00C26FF5 /* Slot.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6C5C9AC61791E8AA00C26FF5 /* SlotData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AB21791E8AA00C26FF5 /* SlotData.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6C5C9AC81791EDD900C26FF5 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C5C9AC71791EDD900C26FF5 /* CoreText.framework */; };
 		6C5C9AD11791F54B00C26FF5 /* transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD01791F54B00C26FF5 /* transparent.png */; };
 		6C5C9AD51792ACB100C26FF5 /* LayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5C9AD41792ACB100C26FF5 /* LayerManager.m */; };
@@ -249,6 +230,7 @@
 		DD5624BF17A85E9600D0FCEB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624BE17A85E9600D0FCEB /* CoreTelephony.framework */; };
 		DD5624C117A85EA500D0FCEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */; };
 		DD5624C317A85EB400D0FCEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C217A85EB300D0FCEB /* libz.dylib */; };
+		DD72AADE18463BF400A161D8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DD72AADD18463BF400A161D8 /* Utils.m */; };
 		DD7549F017AAF1F300107A09 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7549EF17AAF1F300107A09 /* GCHelper.m */; };
 		DDDBBF36179C6DD600E9F126 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF2F179C6DD600E9F126 /* orange.png */; };
 		DDDBBF37179C6DD600E9F126 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF30179C6DD600E9F126 /* yellow.png */; };
@@ -542,45 +524,6 @@
 		6C5C9A301791DD0E00C26FF5 /* utlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utlist.h; sourceTree = "<group>"; };
 		6C5C9A311791DD0E00C26FF5 /* ZipUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipUtils.h; sourceTree = "<group>"; };
 		6C5C9A321791DD0E00C26FF5 /* ZipUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZipUtils.m; sourceTree = "<group>"; };
-		6C5C9A8D1791E7EC00C26FF5 /* spine-cocos2d-iphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "spine-cocos2d-iphone.h"; sourceTree = "<group>"; };
-		6C5C9A8E1791E7EC00C26FF5 /* spine-cocos2d-iphone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "spine-cocos2d-iphone.m"; sourceTree = "<group>"; };
-		6C5C9A901791E8AA00C26FF5 /* Animation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Animation.c; sourceTree = "<group>"; };
-		6C5C9A911791E8AA00C26FF5 /* Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
-		6C5C9A921791E8AA00C26FF5 /* AnimationState.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AnimationState.c; sourceTree = "<group>"; };
-		6C5C9A931791E8AA00C26FF5 /* AnimationState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationState.h; sourceTree = "<group>"; };
-		6C5C9A941791E8AA00C26FF5 /* AnimationStateData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AnimationStateData.c; sourceTree = "<group>"; };
-		6C5C9A951791E8AA00C26FF5 /* AnimationStateData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationStateData.h; sourceTree = "<group>"; };
-		6C5C9A961791E8AA00C26FF5 /* Atlas.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Atlas.c; sourceTree = "<group>"; };
-		6C5C9A971791E8AA00C26FF5 /* Atlas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Atlas.h; sourceTree = "<group>"; };
-		6C5C9A981791E8AA00C26FF5 /* AtlasAttachmentLoader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AtlasAttachmentLoader.c; sourceTree = "<group>"; };
-		6C5C9A991791E8AA00C26FF5 /* AtlasAttachmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtlasAttachmentLoader.h; sourceTree = "<group>"; };
-		6C5C9A9A1791E8AA00C26FF5 /* Attachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Attachment.c; sourceTree = "<group>"; };
-		6C5C9A9B1791E8AA00C26FF5 /* Attachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attachment.h; sourceTree = "<group>"; };
-		6C5C9A9C1791E8AA00C26FF5 /* AttachmentLoader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = AttachmentLoader.c; sourceTree = "<group>"; };
-		6C5C9A9D1791E8AA00C26FF5 /* AttachmentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttachmentLoader.h; sourceTree = "<group>"; };
-		6C5C9A9E1791E8AA00C26FF5 /* Bone.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Bone.c; sourceTree = "<group>"; };
-		6C5C9A9F1791E8AA00C26FF5 /* Bone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bone.h; sourceTree = "<group>"; };
-		6C5C9AA01791E8AA00C26FF5 /* BoneData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BoneData.c; sourceTree = "<group>"; };
-		6C5C9AA11791E8AA00C26FF5 /* BoneData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoneData.h; sourceTree = "<group>"; };
-		6C5C9AA21791E8AA00C26FF5 /* extension.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = extension.c; sourceTree = "<group>"; };
-		6C5C9AA31791E8AA00C26FF5 /* extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = extension.h; sourceTree = "<group>"; };
-		6C5C9AA41791E8AA00C26FF5 /* Json.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Json.c; sourceTree = "<group>"; };
-		6C5C9AA51791E8AA00C26FF5 /* Json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Json.h; sourceTree = "<group>"; };
-		6C5C9AA61791E8AA00C26FF5 /* RegionAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = RegionAttachment.c; sourceTree = "<group>"; };
-		6C5C9AA71791E8AA00C26FF5 /* RegionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionAttachment.h; sourceTree = "<group>"; };
-		6C5C9AA81791E8AA00C26FF5 /* Skeleton.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Skeleton.c; sourceTree = "<group>"; };
-		6C5C9AA91791E8AA00C26FF5 /* Skeleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skeleton.h; sourceTree = "<group>"; };
-		6C5C9AAA1791E8AA00C26FF5 /* SkeletonData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SkeletonData.c; sourceTree = "<group>"; };
-		6C5C9AAB1791E8AA00C26FF5 /* SkeletonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonData.h; sourceTree = "<group>"; };
-		6C5C9AAC1791E8AA00C26FF5 /* SkeletonJson.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SkeletonJson.c; sourceTree = "<group>"; };
-		6C5C9AAD1791E8AA00C26FF5 /* SkeletonJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SkeletonJson.h; sourceTree = "<group>"; };
-		6C5C9AAE1791E8AA00C26FF5 /* Skin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Skin.c; sourceTree = "<group>"; };
-		6C5C9AAF1791E8AA00C26FF5 /* Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Skin.h; sourceTree = "<group>"; };
-		6C5C9AB01791E8AA00C26FF5 /* Slot.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Slot.c; sourceTree = "<group>"; };
-		6C5C9AB11791E8AA00C26FF5 /* Slot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slot.h; sourceTree = "<group>"; };
-		6C5C9AB21791E8AA00C26FF5 /* SlotData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SlotData.c; sourceTree = "<group>"; };
-		6C5C9AB31791E8AA00C26FF5 /* SlotData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlotData.h; sourceTree = "<group>"; };
-		6C5C9AB41791E8AA00C26FF5 /* spine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spine.h; sourceTree = "<group>"; };
 		6C5C9AC71791EDD900C26FF5 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		6C5C9AD01791F54B00C26FF5 /* transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transparent.png; sourceTree = "<group>"; };
 		6C5C9AD31792ACB100C26FF5 /* LayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayerManager.h; sourceTree = "<group>"; };
@@ -675,6 +618,8 @@
 		DD5624BE17A85E9600D0FCEB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DD5624C217A85EB300D0FCEB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DD72AADC18463BF400A161D8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		DD72AADD18463BF400A161D8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		DD7549EE17AAF1F300107A09 /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
 		DD7549EF17AAF1F300107A09 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		DDA809A417A5AD050056CD92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "FloodIt/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1064,52 +1009,6 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		6C5C9A8C1791E7EC00C26FF5 /* spine */ = {
-			isa = PBXGroup;
-			children = (
-				6C5C9A901791E8AA00C26FF5 /* Animation.c */,
-				6C5C9A911791E8AA00C26FF5 /* Animation.h */,
-				6C5C9A921791E8AA00C26FF5 /* AnimationState.c */,
-				6C5C9A931791E8AA00C26FF5 /* AnimationState.h */,
-				6C5C9A941791E8AA00C26FF5 /* AnimationStateData.c */,
-				6C5C9A951791E8AA00C26FF5 /* AnimationStateData.h */,
-				6C5C9A961791E8AA00C26FF5 /* Atlas.c */,
-				6C5C9A971791E8AA00C26FF5 /* Atlas.h */,
-				6C5C9A981791E8AA00C26FF5 /* AtlasAttachmentLoader.c */,
-				6C5C9A991791E8AA00C26FF5 /* AtlasAttachmentLoader.h */,
-				6C5C9A9A1791E8AA00C26FF5 /* Attachment.c */,
-				6C5C9A9B1791E8AA00C26FF5 /* Attachment.h */,
-				6C5C9A9C1791E8AA00C26FF5 /* AttachmentLoader.c */,
-				6C5C9A9D1791E8AA00C26FF5 /* AttachmentLoader.h */,
-				6C5C9A9E1791E8AA00C26FF5 /* Bone.c */,
-				6C5C9A9F1791E8AA00C26FF5 /* Bone.h */,
-				6C5C9AA01791E8AA00C26FF5 /* BoneData.c */,
-				6C5C9AA11791E8AA00C26FF5 /* BoneData.h */,
-				6C5C9AA21791E8AA00C26FF5 /* extension.c */,
-				6C5C9AA31791E8AA00C26FF5 /* extension.h */,
-				6C5C9AA41791E8AA00C26FF5 /* Json.c */,
-				6C5C9AA51791E8AA00C26FF5 /* Json.h */,
-				6C5C9AA61791E8AA00C26FF5 /* RegionAttachment.c */,
-				6C5C9AA71791E8AA00C26FF5 /* RegionAttachment.h */,
-				6C5C9AA81791E8AA00C26FF5 /* Skeleton.c */,
-				6C5C9AA91791E8AA00C26FF5 /* Skeleton.h */,
-				6C5C9AAA1791E8AA00C26FF5 /* SkeletonData.c */,
-				6C5C9AAB1791E8AA00C26FF5 /* SkeletonData.h */,
-				6C5C9AAC1791E8AA00C26FF5 /* SkeletonJson.c */,
-				6C5C9AAD1791E8AA00C26FF5 /* SkeletonJson.h */,
-				6C5C9AAE1791E8AA00C26FF5 /* Skin.c */,
-				6C5C9AAF1791E8AA00C26FF5 /* Skin.h */,
-				6C5C9AB01791E8AA00C26FF5 /* Slot.c */,
-				6C5C9AB11791E8AA00C26FF5 /* Slot.h */,
-				6C5C9AB21791E8AA00C26FF5 /* SlotData.c */,
-				6C5C9AB31791E8AA00C26FF5 /* SlotData.h */,
-				6C5C9AB41791E8AA00C26FF5 /* spine.h */,
-				6C5C9A8D1791E7EC00C26FF5 /* spine-cocos2d-iphone.h */,
-				6C5C9A8E1791E7EC00C26FF5 /* spine-cocos2d-iphone.m */,
-			);
-			path = spine;
-			sourceTree = "<group>";
-		};
 		6C5C9AC91791EEB100C26FF5 /* zombie */ = {
 			isa = PBXGroup;
 			children = (
@@ -1355,7 +1254,6 @@
 			isa = PBXGroup;
 			children = (
 				DD7549ED17AAF0BB00107A09 /* GAmeCenter */,
-				6C5C9A8C1791E7EC00C26FF5 /* spine */,
 				6C291EE1178DE42200E4E31A /* MainMenuLayer.h */,
 				6C291EE0178DE42200E4E31A /* MainMenuLayer.m */,
 				6C18796F1790AF4D00D3DEFD /* ScoreLayer.h */,
@@ -1366,6 +1264,8 @@
 				6CA7FF3A178B6BBA00BF9477 /* Game */,
 				6C6E7AD6178879D600C6BE7B /* AppDelegate.h */,
 				6C6E7AD7178879D600C6BE7B /* AppDelegate.m */,
+				DD72AADC18463BF400A161D8 /* Utils.h */,
+				DD72AADD18463BF400A161D8 /* Utils.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1681,6 +1581,7 @@
 				6C5C9A631791DD0E00C26FF5 /* CCScheduler.m in Sources */,
 				6C5C9A641791DD0E00C26FF5 /* CCShaderCache.m in Sources */,
 				6C5C9A651791DD0E00C26FF5 /* ccShaders.m in Sources */,
+				DD72AADE18463BF400A161D8 /* Utils.m in Sources */,
 				6C5C9A661791DD0E00C26FF5 /* CCSprite.m in Sources */,
 				6C5C9A671791DD0E00C26FF5 /* CCSpriteBatchNode.m in Sources */,
 				6C5C9A681791DD0E00C26FF5 /* CCSpriteFrame.m in Sources */,
@@ -1719,26 +1620,7 @@
 				6C5C9A891791DD0E00C26FF5 /* TGAlib.m in Sources */,
 				6C5C9A8A1791DD0E00C26FF5 /* TransformUtils.m in Sources */,
 				6C5C9A8B1791DD0E00C26FF5 /* ZipUtils.m in Sources */,
-				6C5C9A8F1791E7EC00C26FF5 /* spine-cocos2d-iphone.m in Sources */,
-				6C5C9AB51791E8AA00C26FF5 /* Animation.c in Sources */,
-				6C5C9AB61791E8AA00C26FF5 /* AnimationState.c in Sources */,
-				6C5C9AB71791E8AA00C26FF5 /* AnimationStateData.c in Sources */,
-				6C5C9AB81791E8AA00C26FF5 /* Atlas.c in Sources */,
-				6C5C9AB91791E8AA00C26FF5 /* AtlasAttachmentLoader.c in Sources */,
-				6C5C9ABA1791E8AA00C26FF5 /* Attachment.c in Sources */,
-				6C5C9ABB1791E8AA00C26FF5 /* AttachmentLoader.c in Sources */,
-				6C5C9ABC1791E8AA00C26FF5 /* Bone.c in Sources */,
-				6C5C9ABD1791E8AA00C26FF5 /* BoneData.c in Sources */,
-				6C5C9ABE1791E8AA00C26FF5 /* extension.c in Sources */,
-				6C5C9ABF1791E8AA00C26FF5 /* Json.c in Sources */,
-				6C5C9AC01791E8AA00C26FF5 /* RegionAttachment.c in Sources */,
-				6C5C9AC11791E8AA00C26FF5 /* Skeleton.c in Sources */,
-				6C5C9AC21791E8AA00C26FF5 /* SkeletonData.c in Sources */,
 				DD7549F017AAF1F300107A09 /* GCHelper.m in Sources */,
-				6C5C9AC31791E8AA00C26FF5 /* SkeletonJson.c in Sources */,
-				6C5C9AC41791E8AA00C26FF5 /* Skin.c in Sources */,
-				6C5C9AC51791E8AA00C26FF5 /* Slot.c in Sources */,
-				6C5C9AC61791E8AA00C26FF5 /* SlotData.c in Sources */,
 				6C5C9AD51792ACB100C26FF5 /* LayerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

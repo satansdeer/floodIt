@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "MainMenuLayer.h"
 #import "GameModel.h"
+#import "LayerManager.h"
 
 @implementation GuiLayer
 
@@ -57,7 +58,13 @@
 }
                          
 -(void)menuTapped{
-    [self.myDelegate exitToMenu];
+    [self exitToMenu];
+}
+
+-(void)exitToMenu{
+    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+    [[LayerManager sharedManager] clear:self];
+    [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] withColor:ccWHITE]];
 }
 
 @end
