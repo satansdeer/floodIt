@@ -243,9 +243,13 @@
 		6C6E7AF21788828700C6BE7B /* FloodItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6E7AF11788828700C6BE7B /* FloodItem.m */; };
 		6C7D65A8178E106700D24103 /* Dirt Block@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C7D65A7178E106700D24103 /* Dirt Block@2x.png */; };
 		6CA7FF35178B571E00BF9477 /* GuiLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7FF34178B571E00BF9477 /* GuiLayer.m */; };
-		6CA7FF39178B6BB600BF9477 /* ColorPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7FF38178B6BB600BF9477 /* ColorPanel.m */; };
 		6CEE13DA178E117000B9BD49 /* p2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CEE13D8178E117000B9BD49 /* p2@2x.png */; };
 		6CEE13DB178E117000B9BD49 /* p1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CEE13D9178E117000B9BD49 /* p1@2x.png */; };
+		DD5624BD17A85E8100D0FCEB /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624BC17A85E8100D0FCEB /* NewRelicAgent.framework */; };
+		DD5624BF17A85E9600D0FCEB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624BE17A85E9600D0FCEB /* CoreTelephony.framework */; };
+		DD5624C117A85EA500D0FCEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */; };
+		DD5624C317A85EB400D0FCEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C217A85EB300D0FCEB /* libz.dylib */; };
+		DD7549F017AAF1F300107A09 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7549EF17AAF1F300107A09 /* GCHelper.m */; };
 		DDDBBF36179C6DD600E9F126 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF2F179C6DD600E9F126 /* orange.png */; };
 		DDDBBF37179C6DD600E9F126 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF30179C6DD600E9F126 /* yellow.png */; };
 		DDDBBF38179C6DD600E9F126 /* crystal.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF31179C6DD600E9F126 /* crystal.png */; };
@@ -665,10 +669,14 @@
 		6C7D65A7178E106700D24103 /* Dirt Block@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Dirt Block@2x.png"; sourceTree = "<group>"; };
 		6CA7FF33178B571E00BF9477 /* GuiLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuiLayer.h; sourceTree = "<group>"; };
 		6CA7FF34178B571E00BF9477 /* GuiLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuiLayer.m; sourceTree = "<group>"; };
-		6CA7FF37178B6BB600BF9477 /* ColorPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPanel.h; sourceTree = "<group>"; };
-		6CA7FF38178B6BB600BF9477 /* ColorPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPanel.m; sourceTree = "<group>"; };
 		6CEE13D8178E117000B9BD49 /* p2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p2@2x.png"; sourceTree = "<group>"; };
 		6CEE13D9178E117000B9BD49 /* p1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "p1@2x.png"; sourceTree = "<group>"; };
+		DD5624BC17A85E8100D0FCEB /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
+		DD5624BE17A85E9600D0FCEB /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DD5624C217A85EB300D0FCEB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DD7549EE17AAF1F300107A09 /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
+		DD7549EF17AAF1F300107A09 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		DDA809A417A5AD050056CD92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "FloodIt/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		DDA809A517A5AD720056CD92 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "FloodIt/Resources/Default@2x.png"; sourceTree = "<group>"; };
 		DDDBBF2F179C6DD600E9F126 /* orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange.png; sourceTree = "<group>"; };
@@ -688,6 +696,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD5624C317A85EB400D0FCEB /* libz.dylib in Frameworks */,
+				DD5624C117A85EA500D0FCEB /* SystemConfiguration.framework in Frameworks */,
+				DD5624BF17A85E9600D0FCEB /* CoreTelephony.framework in Frameworks */,
 				6C5C9AC81791EDD900C26FF5 /* CoreText.framework in Frameworks */,
 				6C6E795D178879D400C6BE7B /* GameKit.framework in Frameworks */,
 				6C6E7951178879D400C6BE7B /* OpenAL.framework in Frameworks */,
@@ -695,6 +706,7 @@
 				6C6E794D178879D400C6BE7B /* QuartzCore.framework in Frameworks */,
 				6C6E7955178879D400C6BE7B /* AVFoundation.framework in Frameworks */,
 				6C6E795B178879D400C6BE7B /* CoreGraphics.framework in Frameworks */,
+				DD5624BD17A85E8100D0FCEB /* NewRelicAgent.framework in Frameworks */,
 				6C6E794F178879D400C6BE7B /* OpenGLES.framework in Frameworks */,
 				6C6E7959178879D400C6BE7B /* Foundation.framework in Frameworks */,
 				6C6E7953178879D400C6BE7B /* AudioToolbox.framework in Frameworks */,
@@ -1160,6 +1172,10 @@
 		6C6E794B178879D400C6BE7B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD5624C217A85EB300D0FCEB /* libz.dylib */,
+				DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */,
+				DD5624BE17A85E9600D0FCEB /* CoreTelephony.framework */,
+				DD5624BC17A85E8100D0FCEB /* NewRelicAgent.framework */,
 				6C6E794C178879D400C6BE7B /* QuartzCore.framework */,
 				6C6E794E178879D400C6BE7B /* OpenGLES.framework */,
 				6C6E7950178879D400C6BE7B /* OpenAL.framework */,
@@ -1338,6 +1354,7 @@
 		6CA7FF36178B573000BF9477 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				DD7549ED17AAF0BB00107A09 /* GAmeCenter */,
 				6C5C9A8C1791E7EC00C26FF5 /* spine */,
 				6C291EE1178DE42200E4E31A /* MainMenuLayer.h */,
 				6C291EE0178DE42200E4E31A /* MainMenuLayer.m */,
@@ -1361,8 +1378,6 @@
 				6C6E7AF11788828700C6BE7B /* FloodItem.m */,
 				6C6E7AD9178879D600C6BE7B /* GameFieldLayer.h */,
 				6C6E7ADA178879D600C6BE7B /* GameFieldLayer.m */,
-				6CA7FF37178B6BB600BF9477 /* ColorPanel.h */,
-				6CA7FF38178B6BB600BF9477 /* ColorPanel.m */,
 				6C2844E6178D78F1002973D0 /* GameModel.h */,
 				6C2844E7178D78F1002973D0 /* GameModel.m */,
 			);
@@ -1379,6 +1394,15 @@
 				6C2844E3178D7523002973D0 /* p1.png */,
 			);
 			name = colors;
+			sourceTree = "<group>";
+		};
+		DD7549ED17AAF0BB00107A09 /* GAmeCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DD7549EE17AAF1F300107A09 /* GCHelper.h */,
+				DD7549EF17AAF1F300107A09 /* GCHelper.m */,
+			);
+			name = GAmeCenter;
 			sourceTree = "<group>";
 		};
 		DDDBBF2E179C6DC200E9F126 /* animals */ = {
@@ -1439,6 +1463,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0500;
+				TargetAttributes = {
+					6C6E7948178879D400C6BE7B = {
+						DevelopmentTeam = 7QLM4S4P2A;
+					};
+				};
 			};
 			buildConfigurationList = 6C6E7944178879D400C6BE7B /* Build configuration list for PBXProject "FloodIt" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1599,7 +1628,6 @@
 				6C6E7AB4178879D600C6BE7B /* aabb.c in Sources */,
 				6C6E7AC6178879D600C6BE7B /* quaternion.c in Sources */,
 				6CA7FF35178B571E00BF9477 /* GuiLayer.m in Sources */,
-				6CA7FF39178B6BB600BF9477 /* ColorPanel.m in Sources */,
 				6C2844E8178D78F1002973D0 /* GameModel.m in Sources */,
 				6C1879711790AF4D00D3DEFD /* ScoreLayer.m in Sources */,
 				6C5C9A331791DD0E00C26FF5 /* CCAction.m in Sources */,
@@ -1706,6 +1734,7 @@
 				6C5C9AC01791E8AA00C26FF5 /* RegionAttachment.c in Sources */,
 				6C5C9AC11791E8AA00C26FF5 /* Skeleton.c in Sources */,
 				6C5C9AC21791E8AA00C26FF5 /* SkeletonData.c in Sources */,
+				DD7549F017AAF1F300107A09 /* GCHelper.m in Sources */,
 				6C5C9AC31791E8AA00C26FF5 /* SkeletonJson.c in Sources */,
 				6C5C9AC41791E8AA00C26FF5 /* Skin.c in Sources */,
 				6C5C9AC51791E8AA00C26FF5 /* Slot.c in Sources */,
@@ -1721,7 +1750,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satansdeer satansdeer (7G764VUH4J)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1742,7 +1771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satansdeer satansdeer (7G764VUH4J)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -1762,7 +1791,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FloodIt/Prefix.pch;
@@ -1778,6 +1813,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1788,7 +1824,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FloodIt/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -1803,6 +1845,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;

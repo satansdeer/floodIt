@@ -9,10 +9,6 @@
 #import "cocos2d.h"
 #import <spine/spine-cocos2d-iphone.h>
 
-@protocol FloodItemDelegate
--(void)floodItemTapped:(id)item;
-@end
-
 @interface FloodItem : CCSprite <CCTouchOneByOneDelegate>
 
 @property (nonatomic, assign) CGPoint positionInGame;

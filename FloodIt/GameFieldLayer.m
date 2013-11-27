@@ -44,6 +44,7 @@
         NSNumber *tilesnum = [level objectForKey:@"tilesNum"];
         [[LayerManager sharedManager] addLayersToNode:self];
         [self startWithTilesNum:[tilesnum integerValue] andAvailableColors:[level objectForKey:@"colors"]];
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
 	}
 	return self;
 }
@@ -56,8 +57,6 @@
     [self makeEmptySpaces:0];
     [self displayItems];
     [self createStartingItem:tilesNum];
-    self.colorPanel = [[ColorPanel alloc] initWithDelegate:self andAvailableColors:self.availableColors];
-    [[LayerManager sharedManager].guiLayer addChild:self.colorPanel];
     self.guiLayer = [[GuiLayer alloc] initWithDelegate:self];
     [[LayerManager sharedManager].guiLayer addChild:self.guiLayer];
 }
@@ -68,10 +67,6 @@
     self.startingColor = startItem.filename;
     startItem.isInWinGroup = TRUE;
     [self.startingGroup addObject:startItem];
-}
-
--(void) tweenNode: (CCNode  *) node {
-    [node runAction:[CCEaseElasticOut actionWithAction:[CCScaleTo actionWithDuration:1.7 scale:1]]];
 }
 
 -(void)drawBackground:(int)tilesNumber{
@@ -273,30 +268,27 @@
 
 -(void)addSameItemsToWinGroup:(FloodItem*)item{
     if(![item isEqual:@"empty"]){
-    if(![self.startingGroup containsObject:item]){
-        [self.startingGroup addObject:item];
-        [item updateAsset:@"p1.png"];
-        [GameModel sharedModel].score++;
-    }
-    item.isInWinGroup = TRUE;
-    CGPoint position = item.positionInGame;
-    CGPoint testPosition;
-    if(position.x<[self.floodItems count]-1){
-        testPosition = CGPointMake((int)position.x+1, (int)position.y);
-        [self checkItemAtPos:testPosition andItem:item];
-    }
-    if(position.x>0){
-        testPosition = CGPointMake((int)position.x-1, (int)position.y);
-        [self checkItemAtPos:testPosition andItem:item];
-    }
-    if(position.y<[self.floodItems[0] count]-1){
-        testPosition = CGPointMake((int)position.x, (int)position.y+1);
-        [self checkItemAtPos:testPosition andItem:item];
-    }
-    if(position.y>0){
-        testPosition = CGPointMake((int)position.x, (int)position.y-1);
-        [self checkItemAtPos:testPosition andItem:item];
-    }
+        if(![self.sameColorGroup containsObject:item] && ![self.startingGroup containsObject:item]){
+            [self.sameColorGroup addObject:item];
+        }
+        CGPoint position = item.positionInGame;
+        CGPoint testPosition;
+        if(position.x<[self.floodItems count]-1){
+            testPosition = CGPointMake((int)position.x+1, (int)position.y);
+            [self checkItemAtPos:testPosition andItem:item];
+        }
+        if(position.x>0){
+            testPosition = CGPointMake((int)position.x-1, (int)position.y);
+            [self checkItemAtPos:testPosition andItem:item];
+        }
+        if(position.y<[self.floodItems[0] count]-1){
+            testPosition = CGPointMake((int)position.x, (int)position.y+1);
+            [self checkItemAtPos:testPosition andItem:item];
+        }
+        if(position.y>0){
+            testPosition = CGPointMake((int)position.x, (int)position.y-1);
+            [self checkItemAtPos:testPosition andItem:item];
+        }
     }
 }
 
@@ -304,18 +296,28 @@
     FloodItem*testItem;
     testItem = self.floodItems[(int)testPosition.x][(int)testPosition.y];
     if(![testItem isEqual:@"empty"]){
-        if(item.filename == testItem.filename && !testItem.isInWinGroup){
+        if(item.filename == testItem.filename && ![self.sameColorGroup containsObject:testItem]){
             [self addSameItemsToWinGroup:testItem];
         }
     }
 }
 
--(void)checkStartgroupNeighbourhood{
-    for (FloodItem*item in self.startingGroup) {
-        item.isInWinGroup = FALSE;
+-(void)addSameItemsToStartGroup{
+    for (FloodItem*item in self.sameColorGroup) {
+        [item updateAsset:@"p1.png"];
+        item.isInWinGroup = YES;
+        [self.startingGroup addObject:item];
+        [GameModel sharedModel].score++;
     }
-    [self addSameItemsToWinGroup:self.startingGroup[0]];
-    for (FloodItem*item in self.startingGroup) {
+}
+
+-(void)checkStartgroupNeighbourhood{
+    for (FloodItem*item in self.sameColorGroup) {
+        if([self checkIfNearStartGroup:item.positionInGame]){
+            [GameModel sharedModel].turns--;
+            [self addSameItemsToStartGroup];
+            return;
+        }
     }
 }
 
@@ -323,7 +325,7 @@
     if([GameModel sharedModel].levels.count-1>[GameModel sharedModel].level){
         [GameModel sharedModel].level++;
         [GameModel sharedModel].turns += 7;
-        [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
+        [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
     }
     [self applyWinSequence];
 }
@@ -369,14 +371,24 @@
 }
 
 -(void)loose{
-    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
+    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
     [self applyLooseSequence];
 }
 
-#pragma mark - FloodItemDelegate
-
-
 #pragma mark - ColorPanelDelegate
+
+-(void)chooseItem:(FloodItem *)item{
+    self.sameColorGroup = [[NSMutableArray alloc] init];
+    [self addSameItemsToWinGroup:item];
+    [self checkStartgroupNeighbourhood];
+    [self.guiLayer update];
+    if(self.startingGroup.count == self.totalItems){
+        [self win];
+    }
+    if([GameModel sharedModel].turns == 0){
+        [self loose];
+    }
+}
 
 -(void)chooseColor:(NSString *)color{
     [GameModel sharedModel].turns--;
@@ -398,9 +410,29 @@
 #pragma mark - GuiLayerDelegate
 
 -(void)exitToMenu{
-    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self.colorPanel];
+    [[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
     [[LayerManager sharedManager] clear:self];
     [[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[MainMenuLayer scene] withColor:ccWHITE]];
+}
+
+-(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+    NSLog(@"ccTouchBegan");
+        for (NSArray*items in self.floodItems) {
+                for (FloodItem*item in items) {
+                    if (CGRectContainsPoint(item.boundingBox, [self convertTouchToNodeSpace:touch])) {
+                        [self floodItemTapped:item];
+                        return true;
+                    }
+            }
+        }
+    return false;
+}
+
+-(void)floodItemTapped:(id)item{
+    FloodItem*floodItem = item;
+    NSLog(@"%@", floodItem.filename);
+    //[self chooseColor:floodItem.filename];
+    [self chooseItem:floodItem];
 }
 
 @end

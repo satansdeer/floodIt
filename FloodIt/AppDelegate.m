@@ -10,6 +10,8 @@
 
 #import "AppDelegate.h"
 #import "IntroLayer.h"
+#import <NewRelicAgent/NewRelicAgent.h>
+#import "GCHelper.h"
 
 @implementation AppController
 
@@ -86,6 +88,8 @@
 	
 	// make main window visible
 	[window_ makeKeyAndVisible];
+    [[GCHelper sharedInstance] authenticateLocalUser];
+    [NewRelicAgent startWithApplicationToken:@"AA4eef0d552480a6638d8cbd5eef49e55b5db34ecd"];
 	
 	return YES;
 }
