@@ -231,6 +231,7 @@
 		DD5624C117A85EA500D0FCEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C017A85EA500D0FCEB /* SystemConfiguration.framework */; };
 		DD5624C317A85EB400D0FCEB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DD5624C217A85EB300D0FCEB /* libz.dylib */; };
 		DD72AADE18463BF400A161D8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = DD72AADD18463BF400A161D8 /* Utils.m */; };
+		DD72AAE1184673E000A161D8 /* MapMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = DD72AAE0184673E000A161D8 /* MapMaker.m */; };
 		DD7549F017AAF1F300107A09 /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7549EF17AAF1F300107A09 /* GCHelper.m */; };
 		DDDBBF36179C6DD600E9F126 /* orange.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF2F179C6DD600E9F126 /* orange.png */; };
 		DDDBBF37179C6DD600E9F126 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = DDDBBF30179C6DD600E9F126 /* yellow.png */; };
@@ -620,6 +621,8 @@
 		DD5624C217A85EB300D0FCEB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DD72AADC18463BF400A161D8 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		DD72AADD18463BF400A161D8 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		DD72AADF184673E000A161D8 /* MapMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapMaker.h; sourceTree = "<group>"; };
+		DD72AAE0184673E000A161D8 /* MapMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapMaker.m; sourceTree = "<group>"; };
 		DD7549EE17AAF1F300107A09 /* GCHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCHelper.h; sourceTree = "<group>"; };
 		DD7549EF17AAF1F300107A09 /* GCHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCHelper.m; sourceTree = "<group>"; };
 		DDA809A417A5AD050056CD92 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "FloodIt/Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -1266,6 +1269,8 @@
 				6C6E7AD7178879D600C6BE7B /* AppDelegate.m */,
 				DD72AADC18463BF400A161D8 /* Utils.h */,
 				DD72AADD18463BF400A161D8 /* Utils.m */,
+				DD72AADF184673E000A161D8 /* MapMaker.h */,
+				DD72AAE0184673E000A161D8 /* MapMaker.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1598,6 +1603,7 @@
 				6C5C9A731791DD0E00C26FF5 /* CCTransition.m in Sources */,
 				6C5C9A741791DD0E00C26FF5 /* CCTransitionPageTurn.m in Sources */,
 				6C5C9A751791DD0E00C26FF5 /* CCTransitionProgress.m in Sources */,
+				DD72AAE1184673E000A161D8 /* MapMaker.m in Sources */,
 				6C5C9A761791DD0E00C26FF5 /* cocos2d.m in Sources */,
 				6C5C9A771791DD0E00C26FF5 /* CCDirectorIOS.m in Sources */,
 				6C5C9A781791DD0E00C26FF5 /* CCES2Renderer.m in Sources */,

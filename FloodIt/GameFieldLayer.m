@@ -91,10 +91,10 @@
             NSString*filename = [Utils randomArrayElementFromArray:[Utils sharedUtils].availableColors canBeEmpty:NO];
             if(filename){
                 CGPoint position = CGPointMake((tileSize+2)*i+4 + tileSize/2,
-                                           (tileSize+2)*j+(winSize.height/2 - (tileSize*tilesNumber)/2)+tileSize/3+tileSize/4);
+                                               (tileSize+2)*j+(winSize.height/2 - (tileSize*tilesNumber)/2)+tileSize/3+tileSize/4);
                 FloodItem* image = [[FloodItem alloc] initWithFile:filename
-                                                      position:CGPointMake(i, j)
-                                                   andDelegate:nil];
+                                                          position:CGPointMake(i, j)
+                                                       andDelegate:nil];
                 image.position = position;
                 image.scale = tileSize/(image.boundingBox.size.width+8);
                 self.floodItems[i][j] = image;
@@ -178,31 +178,31 @@
 
 -(void)checkIfField:(NSArray*)field IsValid:(FloodItem*)item checkedItems:(int*)checkedItems checkedItemsArray:(NSMutableArray*)checkedItemsArray{
     if(![item isEqual:@"empty"] && ![checkedItemsArray containsObject:item]){
-    *checkedItems+=1;
-    [checkedItemsArray  addObject:item];
-    CGPoint position = item.positionInGame;
-    CGPoint testPosition;
+        *checkedItems+=1;
+        [checkedItemsArray  addObject:item];
+        CGPoint position = item.positionInGame;
+        CGPoint testPosition;
         FloodItem*testItem;
-    if(position.x<[field count]-1){
-        testPosition = CGPointMake((int)position.x+1, (int)position.y);
-        testItem = field[(int)testPosition.x][(int)testPosition.y];
-        [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
-    }
-    if(position.x>0){
-        testPosition = CGPointMake((int)position.x-1, (int)position.y);
-        testItem = field[(int)testPosition.x][(int)testPosition.y];
-        [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
-    }
-    if(position.y<[self.floodItems[0] count]-1){
-        testPosition = CGPointMake((int)position.x, (int)position.y+1);
-        testItem = field[(int)testPosition.x][(int)testPosition.y];
-        [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
-    }
-    if(position.y>0){
-        testPosition = CGPointMake((int)position.x, (int)position.y-1);
-        testItem = field[(int)testPosition.x][(int)testPosition.y];
-        [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
-    }
+        if(position.x<[field count]-1){
+            testPosition = CGPointMake((int)position.x+1, (int)position.y);
+            testItem = field[(int)testPosition.x][(int)testPosition.y];
+            [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
+        }
+        if(position.x>0){
+            testPosition = CGPointMake((int)position.x-1, (int)position.y);
+            testItem = field[(int)testPosition.x][(int)testPosition.y];
+            [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
+        }
+        if(position.y<[self.floodItems[0] count]-1){
+            testPosition = CGPointMake((int)position.x, (int)position.y+1);
+            testItem = field[(int)testPosition.x][(int)testPosition.y];
+            [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
+        }
+        if(position.y>0){
+            testPosition = CGPointMake((int)position.x, (int)position.y-1);
+            testItem = field[(int)testPosition.x][(int)testPosition.y];
+            [self checkIfField:field IsValid:testItem checkedItems:checkedItems checkedItemsArray:checkedItemsArray];
+        }
     }
 }
 
@@ -337,7 +337,7 @@
                        [CCDelayTime actionWithDuration:0.5],
                        [CCEaseBackInOut actionWithAction:moveToLeft],
                        [CCCallFuncO actionWithTarget:self selector:@selector(nextLevel) object:nil],
-                     nil]];
+                       nil]];
 }
 
 -(void)nextLevel{
@@ -386,14 +386,14 @@
 #pragma mark -
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
-        for (NSArray*items in self.floodItems) {
-                for (FloodItem*item in items) {
-                    if (CGRectContainsPoint(item.boundingBox, [self convertTouchToNodeSpace:touch])) {
-                        [self floodItemTapped:item];
-                        return true;
-                    }
+    for (NSArray*items in self.floodItems) {
+        for (FloodItem*item in items) {
+            if (CGRectContainsPoint(item.boundingBox, [self convertTouchToNodeSpace:touch])) {
+                [self floodItemTapped:item];
+                return true;
             }
         }
+    }
     return false;
 }
 
@@ -412,7 +412,9 @@
 -(void)updateItemCounters{
     for (NSArray*items in self.floodItems) {
         for (FloodItem*item in items) {
-            [item updateCounter];
+            if([item respondsToSelector:@selector(updateCounter)]){
+                [item updateCounter];
+            }
         }
     }
 }
