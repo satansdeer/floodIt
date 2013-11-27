@@ -11,11 +11,10 @@
 #import "FloodItem.h"
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
-#import "ColorPanel.h"
 #import "GuiLayer.h"
 
 // HelloWorldLayer
-@interface GameFieldLayer : CCLayerColor <ColorPanelDelegate, GuiLayerDelegate>
+@interface GameFieldLayer : CCLayerColor <GuiLayerDelegate>
 {
 }
 
